@@ -1,0 +1,22 @@
+#nav {
+  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: $transparent-black-med;
+  padding: 9px 15px;
+  color: $off-white;
+  vertical-align: middle;
+  font-size: 28px;
+  ul {
+    float: right;
+  }
+  ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0 15px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+  }
+}

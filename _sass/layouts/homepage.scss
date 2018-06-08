@@ -1,0 +1,60 @@
+.section {
+  height: 100vh;
+  font-family: Raleway, sans-serif;
+}
+
+.vNav {
+    position: fixed;
+    top: 70%;
+    right: 1%;
+    width: 50px;
+    z-index: 10;
+    list-style-type: none;
+}
+
+.vNav ul {
+    position: relative;
+    padding: 3px;
+    padding-left: 35%;
+}
+
+.vNav ul li{
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 35%;
+    color: rgb(113,135,133);
+}
+
+.vNav a{
+    display: block;
+    width: 8px;
+    height: 8px;
+    text-indent: -9999px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: rgb(113,135,133);
+    text-decoration: none;
+}
+
+.vNav a:hover{
+    border-radius: 50%;
+    background-color: $white;
+    text-decoration: none;
+}
+
+.vNav a.active{
+    border-radius: 50%;
+    background-color: rgb(113,135,133);
+    text-decoration: none;
+}
+
+.label {
+    position: relative;
+    top: -60%;
+    left: -200%;
+    width: 100%;
+    text-align: right;
+    font-size: 1em;
+    color: rgb(113,135,133);
+    display: none;
+}

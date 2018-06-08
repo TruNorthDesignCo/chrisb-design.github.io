@@ -1,0 +1,22 @@
+@media screen and (min-width: 700px) {
+  .heroVariable { margin-left: 30vw; }
+  #hero .carousel-inner .item img { height: 100vh; }
+}
+
+@media screen and (max-width: 700px) {
+  .heroVariable { margin-left: 32vw; }
+}
+
+@media screen and (min-width: 520px) {
+  #hero .carousel-inner .item img { height: 70vh; }
+  .carousel-control { margin-top: 35vh; }
+}
+
+@media screen and (max-width: 520px) {
+  #hero .carousel-inner .item img { height: 30vh; }
+  .carousel-control { margin-top: 60vh; }
+}
+
+@media screen and (max-width: 430px) {
+  .heroVariable { margin-left: 34vw; }
+}
