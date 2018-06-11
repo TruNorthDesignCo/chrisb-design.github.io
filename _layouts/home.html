@@ -9,14 +9,16 @@
 
 <head>
   {% include common/meta.html %}
-  <link href='{{ site.baseurl }}/css/home.css' rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+  <link href='{{ site.baseurl }}/css/home.css' rel="stylesheet" type="text/css">
   {% include common/libraries.html %}
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <script defer src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script defer src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script defer src="/assets/javascripts/main.js"></script>
+  <script defer src="/assets/javascripts/waypoints/lib/jquery.waypoints.min.js"></script>
+  <scrpt defer src="/assets/javascripts/waypoints/lib/shortcuts/invew.min.js"></script>
 <!--  <script defer src="//assets/javascripts/modernizr.js"></script> -->
 </head>
 
@@ -31,43 +33,31 @@
     </ul>
   </nav>
 
-<!--
-  <div id="homeMenu">
-    <ul>
-      <li data-menuanchor="intro"><a href="#section0">Intro</a></li>
-      <li data-menuanchor="about"><a href="#section1">About Me</a></li>
-      <li data-menuanchor="services"><a href="#section2">Services</a></li>
-      <li data-menuanchor="gallery"><a href="#section3">Gallery</a></li>
-      <li data-menuanchor="social"><a href="#section4">Social Links</a></li>
-    </ul>
-  </div>
--->
-
 <div class="vNav">
   <ul class="vNav">
     <li>
        <a href="#section0" class="active">
-           <div class="label">Section0</div>
+           <div class="label">Top</div>
        </a>
     </li>
     <li>
       <a href="#section1">
-        <div class="label">Section1</div>
+        <div class="label">Bio</div>
       </a>
     </li>
     <li>
       <a href="#section2">
-        <div class="label">Section2</div>
+        <div class="label">Section 2</div>
       </a>
     </li>
     <li>
       <a href="#section3">
-        <div class="label">Section3</div>
+        <div class="label">Section 3</div>
       </a>
     </li>
     <li>
       <a href="#section4">
-        <div class="label">Section4</div>
+        <div class="label">A Really Long One To Test Spacing</div>
       </a>
     </li>
   </ul>
@@ -121,14 +111,22 @@
       </a>
     </div>
 
-    <a class="scrollDown animated bounce" title="{{ site.data.i18n[site.lang].more }}" href="#section1"><i class="fas fa-angle-down fa-5x"></i></a>
+    <a id="scrollDown" class="animated bounce" title="{{ site.data.i18n[site.lang].more }}" href="#section1"><i class="fas fa-angle-down fa-5x"></i></a>
   </div>
 
 <!------------------------------ End Hero ------------------------------------->
 
   <a name="section1"></a>
-  <div id="section1" class="section par" data-name="about">
-    Section 1 (About Me)
+  <div id="section1" class="section par" data-name="bio">
+    <div id="bioAnimate">
+      <img src="/assets/images/photos/casual.jpg" class="portrait animated">
+      <div class="bio animated">
+        <h2>Hi, I'm Chris.</h2><br />
+        <p>I'm a Graphic Designer, Front-End Web Developer, and Marketing Specialist.
+        There will be some other words here, but for now this is what you get.
+        </p>
+      </div>
+    </div>
   </div>
 
   <a name="section2"></a>

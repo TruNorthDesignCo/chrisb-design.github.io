@@ -4,15 +4,8 @@ $(document).ready(function($){
           parPosition.push($(this).offset().top);
       });
 
-//Soft Scroll on link clicks
+//Soft Scroll on link click
   $('.vNav a').click(function(){
-    $('html, body').animate({
-      scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    return false;
-  });
-
-  $('.scrollDown').click(function(){
     $('html, body').animate({
       scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
@@ -47,4 +40,13 @@ $(document).ready(function($){
     $('.vNav ul li a').removeClass('active');
       $(this).addClass('active');
   });
+});
+
+// scrollDown Settings
+  //Soft scroll
+$('#scrollDown').click(function(){
+  $('html, body').animate({
+    scrollTop: $( $.attr(this, 'href') ).offset().top
+  }, 500);
+  return false;
 });

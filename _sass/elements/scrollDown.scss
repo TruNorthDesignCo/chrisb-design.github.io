@@ -1,0 +1,11 @@
+#scrollDown {
+  position: absolute;
+  left: 48%;
+  bottom: 10%;
+  color: $off-white;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  .fas:hover, svg:hover, .fa-5x:hover, a:hover { color: $white; }
+  .fas:visited, svg:visited, .fa-5x:visited, a:visited  { color: $off-white; }
+  .fas:active, svg:active, .fa-5x:active, a:active  { color: $off-white; }
+}
