@@ -14,7 +14,7 @@
       position: relative;
       padding-bottom: 20px;
       padding-left: 35%;
-      color: rgb(113,135,133);
+      color: $mottled;
     }
   }
 }
@@ -26,7 +26,7 @@
   text-indent: -9999px;
   border-radius: 50%;
   border: 2px solid;
-  border-color: rgb(113,135,133);
+  border-color: $mottled;
   text-decoration: none;
 }
 
@@ -38,18 +38,19 @@
 
 .vNav a.active{
   border-radius: 50%;
-  background-color: rgb(113,135,133);
+  background-color: $mottled;
   text-decoration: none;
 }
 
 .label {
   position: relative;
   top: -180%;
-  right: 2vw;
-  width: 100%;
+  right: 12vw;
+  width: calc(100% + 80px);
   text-align: right;
   font-size: 1em;
-  color: rgb(113,135,133);
+  color: $mottled;
+  background-color: linear-gradient (to right, $transparent, $transparent-black-light);
   display: none;
   font-family: raleway thin, sans-serif;
 }
