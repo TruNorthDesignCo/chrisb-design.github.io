@@ -4,7 +4,7 @@
 
 .heroCaption {
   z-index: 5;
-  color: $off-white;
+  color: $gray10;
   font-size: 4.5vw;
   line-height: 4vw;
   font-weight: bold;
@@ -17,7 +17,7 @@
   .blankSpace {
     color: $transparent;
     padding-bottom: 1vw;
-    border-bottom: solid 3px $off-white;
+    border-bottom: solid 3px $gray10;
     padding-right: 37vw;
   }
   .captionQuestion { float: right; font-size: 5vw; }
