@@ -1,0 +1,57 @@
+#hero .carousel-inner .item img {
+  height: 100vh;
+}
+
+.heroCaption {
+  z-index: 5;
+  color: $off-white;
+  font-size: 4.5vw;
+  line-height: 4vw;
+  font-weight: bold;
+  padding: 5px 0 5px 30px;
+  position: absolute;
+  margin-left: 10vw;
+  vertical-align: middle;
+  top: 30%;
+  font-family: Raleway light, sans-serif;
+  .blankSpace {
+    color: $transparent;
+    padding-bottom: 1vw;
+    border-bottom: solid 3px $off-white;
+    padding-right: 37vw;
+  }
+  .captionQuestion { float: right; font-size: 5vw; }
+}
+
+.heroVariable {
+  z-index: 5;
+  color: $white;
+  font-size: 4.5vw;
+  line-height: 4vw;
+  font-weight: bold;
+  position: absolute;
+  display: flex;
+  padding: 5px;
+  top: 30%;
+  font-family: 'Waiting for the Sunrise', sans-serif;
+}
+
+#hero .carousel-inner .item img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-control {
+  cursor: pointer;
+  position: absolute;
+  height: 50px;
+  width: 50px !important;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  .glyphicon-chevron-left, .glyphicon-chevron-right { font-size: 18px !important; }
+}
+
+.carousel-control:hover { background-color: $transparent-black-light; }
