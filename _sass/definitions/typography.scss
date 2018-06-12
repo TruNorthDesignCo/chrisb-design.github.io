@@ -1,3 +1,6 @@
+.centered {
+  text-align: center;
+}
 h1 {
 
 }
@@ -6,3 +9,25 @@ h2 {
   font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
   font-size: 5em;
 }
+
+h3 {
+
+}
+
+h4 {
+  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-size: 2em;
+}
+
+.rightLink {
+  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-size: 2em;
+  text-align: right;
+  text-decoration: none !important;
+  color: $white;
+  margin-top: 60px;
+  float: right;
+  margin-right: 5vw;
+}
+.rightLink:hover { color: $white; }
+.rightLink:visited { color: $white; }

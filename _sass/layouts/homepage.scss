@@ -62,7 +62,7 @@
 
 //Section 1 (Bio)
 #section1 {
-  height: 100vh;
+  height: 120vh;
   font-family: Raleway, sans-serif;
   background-image: url("/assets/images/textures/funky-lines.png");
   background-repeat: repeat;
@@ -80,6 +80,7 @@
   vertical-align: middle;
   margin: calc(30vh - 30px) 10vw;
   background-attachment: fixed; //For Parallax Effect
+  box-shadow: 3px 3px 1px $transparent-black-light;
 }
 
 .bio {
@@ -98,7 +99,6 @@
 #section2 {
   height: 150vh;
   font-family: Raleway, sans-serif;
-  background-image: url("/assets/images/textures/funky-lines.png");
   background-repeat: repeat;
   background-attachment: fixed;
 }
@@ -106,13 +106,14 @@
 #section2Clipping {
   width: 100%;
   height: 100%;
+  margin-top: -15vh;
   clip-path: polygon(0% 0%, 0% 87%, 100% 95%, 100% 8%);
-  background-color: $gray80;
+  background-image: url("/assets/images/textures/tweed.png");
+  background-repeat: repeat;
 }
 
 .section2Content {
   z-index: 3;
-  text-align: center;
   color: $white;
   height: 120%;
   width: 100%;
@@ -122,7 +123,11 @@
 
 //Section 3
 #section3 {
-  height: 100vh;
+  height: 120vh;
+  margin-top: -20vh;
+  padding-top: 30vh;
+  background-image: url("/assets/images/textures/funky-lines-rev.png");
+  background-repeat: repeat;
   font-family: Raleway, sans-serif;
 }
 

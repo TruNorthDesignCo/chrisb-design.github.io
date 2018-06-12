@@ -1,0 +1,117 @@
+.photoBannerContainer {
+ width: 50vw;
+ height: 100px;
+ overflow: hidden;
+ margin: 15px auto 90px;
+ background: $transparent;
+// border-left: solid 0.5px $transparent-black-med;
+// border-right: solid 0.5px $transparent-black-med;
+ padding: 15px 0;
+
+}
+
+.photoBannerFrameBefore, .photoBannerFrameAfter {
+  z-index: 3;
+  position: absolute;
+  height: 100%;
+  margin-top: -200px;
+  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-size: 10em;
+  color: $gray80;
+  pointer-events: none;
+}
+
+.photoBannerFrameBefore { margin-left: -12px; }
+.photoBannerFrameAfter {
+  text-align: right;
+  width: 50vw;
+  margin-left: 15px;
+}
+
+.photoBanner {
+ height: 100%;
+ width: 200%;
+ margin-bottom: 80px;
+ vertical-align: middle;
+}
+
+.photoBanner img {
+ -webkit-transition: all 0.5s ease;
+ -moz-transition: all 0.5s ease;
+ -o-transition: all 0.5s ease;
+ -ms-transition: all 0.5s ease;
+ transition: all 0.5s ease;
+ height: 100%;
+}
+
+.photoBanner img:hover {
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+ transform: scale(1.1);
+ cursor: pointer;
+
+ -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+ -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+ box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+/*keyframe animations*/
+.first {
+ -webkit-animation: bannermove 30s linear infinite;
+    -moz-animation: bannermove 30s linear infinite;
+     -ms-animation: bannermove 30s linear infinite;
+      -o-animation: bannermove 30s linear infinite;
+         animation: bannermove 30s linear infinite;
+}
+
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -1125px;
+ }
+
+}
+
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}

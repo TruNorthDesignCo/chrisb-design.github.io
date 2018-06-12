@@ -11,9 +11,9 @@
 @import "core/responsive";
 
 //definitions
-@import "definitions/typography";
 @import "definitions/fonts";
 @import "definitions/colors";
+@import "definitions/typography";
 
 //layouts
 @import "layouts/homepage";
@@ -26,5 +26,6 @@
 //elements
 @import "elements/hero";
 @import "elements/scrollDown";
+@import "elements/photoBanner";
 
 //components
