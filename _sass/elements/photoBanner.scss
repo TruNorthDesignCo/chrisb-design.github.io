@@ -29,10 +29,11 @@
 }
 
 .photoBanner {
- height: 100%;
- width: 200%;
+ height: 90%;
+ width: 400%;
  margin-bottom: 80px;
  vertical-align: middle;
+
 }
 
 .photoBanner img {
@@ -45,11 +46,12 @@
 }
 
 .photoBanner img:hover {
- -webkit-transform: scale(1.1);
- -moz-transform: scale(1.1);
- -o-transform: scale(1.1);
- -ms-transform: scale(1.1);
- transform: scale(1.1);
+  height: 105%;
+ -webkit-transform: scale(1.5);
+ -moz-transform: scale(1.5);
+ -o-transform: scale(1.5);
+ -ms-transform: scale(1.5);
+ transform: scale(1.5);
  cursor: pointer;
 
  -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
@@ -71,7 +73,7 @@
     margin-left: 0px;
  }
  100% {
-    margin-left: -1125px;
+    margin-left: 380%;
  }
 
 }

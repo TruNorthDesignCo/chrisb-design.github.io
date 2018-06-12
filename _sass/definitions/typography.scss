@@ -1,13 +1,22 @@
-.centered {
-  text-align: center;
-}
-h1 {
+a { color: $bluejade; }
+a:hover { color: $roarange; }
+a:visited { color: $bluejade; }
 
+h1 {
+  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-size: 10em;
+  line-height: 0;
+  a {
+    text-decoration: none !important;
+    color: $bluejade;
+  }
+  a:hover { color: $roarange !important; }
+  a:visited { color: $bluejade; }
 }
 
 h2 {
   font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
-  font-size: 5em;
+  font-size: 0;
 }
 
 h3 {
@@ -17,6 +26,7 @@ h3 {
 h4 {
   font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
   font-size: 2em;
+  line-height: 1.5em;
 }
 
 .rightLink {
@@ -24,10 +34,22 @@ h4 {
   font-size: 2em;
   text-align: right;
   text-decoration: none !important;
-  color: $white;
+  color: $bluejade;
   margin-top: 60px;
   float: right;
   margin-right: 5vw;
 }
-.rightLink:hover { color: $white; }
-.rightLink:visited { color: $white; }
+.rightLink:hover { color: $roarange !important; }
+.rightLink:visited { color: $bluejade; }
+
+.lipsum { //Delete me when site is live!
+  font-family: courier, monospace;
+}
+
+.centered {
+  text-align: center;
+}
+
+.sans {
+  font-family: 'Raleway light', 'Trebuchet', sans-serif;
+}
