@@ -132,6 +132,7 @@
   padding-top: 20vh;
   background-image: url("/assets/images/textures/funky-lines-rev.png");
   background-repeat: repeat;
+  background-attachment: fixed;
   font-family: Raleway, sans-serif;
   text-align: left;
   h4 {
@@ -211,6 +212,6 @@
 
 //Section 4
 #section4 {
-  height: 100vh;
+  height: 30vh;
   font-family: Raleway, sans-serif;
 }
