@@ -50,3 +50,10 @@ $('#scrollDown').click(function(){
   }, 500);
   return false;
 });
+
+/*
+// Blog Photo Behavior
+$("#blogBlock").hover(function(){
+    $('#blogPhoto').fadeOut();
+});
+*/
