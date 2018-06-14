@@ -57,3 +57,24 @@ $("#blogBlock").hover(function(){
     $('#blogPhoto').fadeOut();
 });
 */
+
+// .wordmarkMini Appear
+$(window).scroll(function() {
+    if ($(this).scrollTop()) {
+        $('#wordmarkMini:hidden').stop(true, true).delay('fast').slideDown('200ms');
+        $('#wordmarkMiniBox:hidden').stop(true, true).fadeIn('500ms');
+    } else {
+        $('#wordmarkMini').stop(true, true).slideUp('200ms');
+        $('#wordmarkMiniBox').stop(true, true).fadeOut('100ms');
+    }
+});
+
+// .wordmarkMini scroll to top
+$(document).ready(function(){
+	$('#wordmarkMiniBox').click(function () {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 800);
+		return false;
+	});
+});

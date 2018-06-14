@@ -1,16 +1,17 @@
 #nav {
   font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
   z-index: 10;
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 60px;
   background-color: $transparent-black-med;
-  padding: 9px 15px;
+  padding: 5px 15px;
   color: $gray10;
   vertical-align: middle;
-  font-size: 28px;
+  font-size: 36px;
   ul {
     float: right;
+    margin-top: -8px;
   }
   ul li {
     display: inline-block;
@@ -18,5 +19,53 @@
     padding: 0 15px;
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
+  }
+}
+
+#wordmark {
+  padding: 0 60px 5px 30px;
+  margin: 0 0 0 -15px;
+  top: 0;
+}
+
+#wordmarkMiniBox {
+  display: none;
+  z-index: 4;
+  position: fixed;
+  clip-path: polygon(0% 0%, 0% 100%, 50% 90%, 100% 100%, 100% 0%);
+  background-color: $transparent-black-light;
+  width: 63px;
+  height: 70px;
+  top: 0;
+  left: 15px;
+  cursor: pointer;
+}
+
+#wordmarkMini {
+  display: none;
+  z-index: 5;
+  position: fixed;
+  clip-path: polygon(0% 0%, 0% 100%, 50% 90%, 100% 100%, 100% 0%);
+  background-color: $bluejade;
+  width: 60px;
+  height: 65px;
+  top: 0;
+  left: 15px;
+  padding: 0 0 0 10px;
+  color: $white;
+  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-size: 3em;
+  box-shadow: 1px 1px 5px $transparent-black-med;
+  text-shadow: 1px 1px 5px $transparent-black-light;
+}
+
+#wordmarkMiniBox:hover {
+  height: 75px;
+  transition: height 100ms;
+  #wordmarkMini {
+    height: 70px;
+    background-color: $bluejade-dark;
+    transition: background-color 200ms;
+    transition: height 100ms;
   }
 }
