@@ -58,12 +58,14 @@
 //Section 0 (Hero)
 #section0 {
   height: 100vh;
+//  min-height: 450px;
   font-family: Raleway, sans-serif;
 }
 
 //Section 1 (Bio)
 #section1 {
   height: 120vh;
+//  min-height: 450px;
   font-family: Raleway, sans-serif;
   background-image: url("/assets/images/textures/funky-lines.png");
   background-repeat: repeat;
@@ -101,6 +103,7 @@
   position: static;
   z-index: 3;
   height: 150vh;
+//  min-height: 600px;
   font-family: Raleway, sans-serif;
 }
 
@@ -128,6 +131,7 @@
   position: static;
   z-index: 1;
   height: 130vh;
+//  min-height: 450px;
   margin-top: -20vh;
   padding-top: 20vh;
   background-image: url("/assets/images/textures/funky-lines-rev.png");
@@ -168,7 +172,6 @@
   position: absolute;
   height: 90vh;
   width: 50vw;
-  max-width: 600px;
   right: 7vw;
 //  margin-top: -16vh;
   padding: 16vh 0 0 3vw;
@@ -176,14 +179,6 @@
   background-image: url("/assets/images/photos/handwritten.jpg");
   background-size: cover;
   a {
-    position: absolute;
-    z-index: 2;
-    font-family: 'Montserrat', Arial Black, sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 14vw;
-    line-height: .8em;
-    text-align: left;
     color: $transparent-white;
     text-decoration: none;
   }
@@ -195,6 +190,18 @@
   }
   a { color: $transparent-black-med; }
 }
+
+.blogBlockText {
+  width: 40vw;
+  max-width: 400px;
+  position: absolute;
+  z-index: 2;
+  font-family: 'Montserrat', Arial Black, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 14vw;
+  line-height: .8em;
+  text-align: left;}
 
 #blogPhoto {
   opacity: 1;
@@ -212,6 +219,55 @@
 
 //Section 4
 #section4 {
-  height: 30vh;
+  height: 32vh;
+//  min-height: 200px;
   font-family: Raleway, sans-serif;
+  background-image: url('/assets/images/textures/tweed.png');
+  color: $white;
+  h2 {
+    color: $white;
+    text-shadow: 1px 1px 1px $black;
+  }
+}
+
+.footerLeft {
+  float: left;
+  width: 50vw;
+  min-width: 312px;
+  padding: 20px 0 0 3vw;
+}
+
+.footerRight {
+  float: right;
+  width: 50vw;
+  min-width: 312px;
+}
+
+.socialIcons {
+  position: relative;
+  width: 80%;
+  height: 8vw;
+  vertical-align: middle;
+  margin: -12vh 0 0 2vw;
+  img {
+    height: 60%;
+    min-height: 45px;
+//    max-height: 45px;
+//    width: 8vw;
+//    min-width: 30px;
+//    max-width: 45px;
+    margin: 0 1vw;
+  }
+}
+
+#copyrightBar {
+  height: 5vh;
+  background-color: $gray80;
+  width: 100%;
+  bottom: 0;
+  padding: 7px 0 0 15px;
+  color: $gray50;
+  font-size: 8.5pt;
+  font-family: Raleway, sans-serif;
+  text-align: center;
 }

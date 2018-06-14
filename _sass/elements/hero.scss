@@ -6,7 +6,7 @@
 
 .heroCaption {
   z-index: 5;
-  color: $gray10;
+  color: $white;
   font-size: 4.5vw;
   line-height: 4vw;
   font-weight: bold;
@@ -16,13 +16,19 @@
   vertical-align: middle;
   top: 30%;
   font-family: Raleway light, sans-serif;
+  text-shadow: 1px 1px 8px $black;
   .blankSpace {
     color: $transparent;
     padding-bottom: 1vw;
-    border-bottom: solid 3px $gray10;
+    border-bottom: solid 3px $white;
     padding-right: 37vw;
+    text-shadow: none;
   }
-  .captionQuestion { float: right; font-size: 5vw; }
+  .captionQuestion {
+    float: right;
+    font-size: 5vw;
+    text-shadow: 1px 1px 8px $black;
+  }
 }
 
 .heroVariable {
@@ -36,6 +42,7 @@
   padding: 5px;
   top: 30%;
   font-family: 'Waiting for the Sunrise', sans-serif;
+  text-shadow: 1px 1px 8px $black;
 }
 
 #hero .carousel-inner .item img {
