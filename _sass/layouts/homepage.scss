@@ -52,7 +52,8 @@
   font-size: 1em;
   color: $mottled;
   display: none;
-  font-family: raleway thin, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
 }
 
 //Section 0 (Hero)
@@ -81,7 +82,7 @@
   object-fit: cover;
   object-position: center;
   vertical-align: middle;
-  margin: calc(30vh - 30px) 10vw;
+  margin: calc(35vh - 30px) 10vw;
   background-attachment: fixed; //For Parallax Effect
   box-shadow: 3px 3px 1px $transparent-black-light;
 }
@@ -90,7 +91,7 @@
   float: right;
   display: inline-block;
   position: absolute;
-  margin: calc(10vh + 40px) 10vw 0 0;
+  margin: calc(35vh - 30px) 10vw 0 0;
   vertical-align: middle;
 }
 
@@ -123,7 +124,7 @@
   height: 120%;
   width: 100%;
   position: absolute;
-  padding: 25vh 10vw 0;
+  padding: calc(35vh - 30px) 10vw 0;
 }
 
 //Section 3
@@ -162,15 +163,16 @@
     clear: left;
     padding: 0 15px;
     margin-left: 15px;
-    width: 40vw;
+    width: 30vw;
     text-align: center;
   }
+  .tagsContainer:nth-child(n+1) { margin-left: calc(10vw - 30px); }
 }
 
 #blogBlock {
   float: right;
   position: absolute;
-  height: 90vh;
+  height: calc(70vh - 30px);
   width: 50vw;
   right: 7vw;
 //  margin-top: -16vh;
@@ -207,8 +209,8 @@
   opacity: 1;
   transition: opacity 100ms linear;
   position: absolute;
-  height: 90vh;
-  width: 50vw;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   object-fit:  cover;
@@ -231,32 +233,34 @@
 }
 
 .footerLeft {
-  float: left;
-  width: 50vw;
+//  float: left;
+  width: 40vw;
   min-width: 312px;
   padding: 20px 0 0 3vw;
 }
 
 .footerRight {
   float: right;
-  width: 50vw;
+  width: 60vw;
   min-width: 312px;
+  margin-top: -25vh;
 }
 
 .socialIcons {
-  position: relative;
-  width: 80%;
+  position: absolute;
   height: 8vw;
+  width: 50vw;
   vertical-align: middle;
-  margin: -12vh 0 0 2vw;
+  margin: 10vh 25vw;
   img {
+    float: right;
     height: 60%;
     min-height: 45px;
 //    max-height: 45px;
 //    width: 8vw;
 //    min-width: 30px;
 //    max-width: 45px;
-    margin: 0 1vw;
+    margin: 1vh 1vw;
   }
 }
 

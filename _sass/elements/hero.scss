@@ -1,11 +1,11 @@
-#hero { box-shadow: 3px 3px 5px $transparent-black-med; }
+#hero { box-shadow: 3px 3px 5px $transparent-black-med; height: 100vh; }
 
-#hero .carousel-inner .item img {
-  height: 100vh;
-}
+#hero .carousel-inner { height: 100vh; }
+#hero .carousel-inner .item { height: 100vh; }
+#hero .carousel-inner .item img { height: 100vh; }
 
 .heroCaption {
-  z-index: 5;
+  z-index: 3;
   color: $white;
   font-size: 4.5vw;
   line-height: 4vw;
@@ -18,6 +18,9 @@
   font-family: Raleway light, sans-serif;
   text-shadow: 1px 1px 8px $black;
   .blankSpace {
+    pointer-events: none;
+    position: inherit;
+    z-index: 3;
     color: $transparent;
     padding-bottom: 1vw;
     border-bottom: solid 3px $white;
@@ -28,13 +31,15 @@
     float: right;
     font-size: 5vw;
     text-shadow: 1px 1px 8px $black;
+    margin-left: 50vw;
   }
 }
 
 .heroVariable {
-  z-index: 5;
   color: $white;
-  font-size: 4.5vw;
+  color: $roarange;
+//  mix-blend-mode: difference;
+  font-size: 6vw;
   line-height: 4vw;
   font-weight: bold;
   position: absolute;
@@ -45,12 +50,36 @@
   text-shadow: 1px 1px 8px $black;
 }
 
+.heroSmall1, .heroSmall2, .heroSmall3 {
+  display: none;
+  width: 90fvw;
+  position: absolute;
+  z-index: 2;
+  color: $roarange;
+  left: 13vw;
+  padding-left: 1vw;
+  border-left: solid 3px $roarange;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1em;
+  font-size: 9vw;
+  text-shadow: 1px 1px 3px $transparent-black-med;
+  background-color: $transparent-black-light;
+  mix-blend-mode: difference;
+}
+
+.heroSmall1 { top: 30vh; }
+.heroSmall2 { top: 46.5vh; }
+.heroSmall3 { top: 55vh; }
+
 #hero .carousel-inner .item img {
   width: 100%;
   object-fit: cover;
 }
 
 .carousel-control {
+  z-index: 3;
   cursor: pointer;
   position: absolute;
   height: 50px;

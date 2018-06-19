@@ -61,8 +61,8 @@ $("#blogBlock").hover(function(){
 // .wordmarkMini Appear
 $(window).scroll(function() {
     if ($(this).scrollTop()) {
-        $('#wordmarkMini:hidden').stop(true, true).delay('fast').slideDown('200ms');
-        $('#wordmarkMiniBox:hidden').stop(true, true).fadeIn('500ms');
+        $('#wordmarkMini:hidden').stop(true, true).slideDown('200ms');
+        $('#wordmarkMiniBox:hidden').stop(true, true).fadeIn('200ms');
     } else {
         $('#wordmarkMini').stop(true, true).slideUp('200ms');
         $('#wordmarkMiniBox').stop(true, true).fadeOut('100ms');

@@ -1,22 +1,75 @@
+@media screen and (min-width: 1080px) {
+  #blogBlock {
+    padding-top: 10vh;
+    .blogBlockText { font-size: 9em; }
+  }
+}
+
 @media screen and (min-width: 700px) {
   .heroVariable { margin-left: 30vw; }
   #hero .carousel-inner .item img { height: 100vh; }
+  .socialIcons { right: -20vw; }
+  .blogBlockText { font-size: 7em; }
 }
 
 @media screen and (max-width: 700px) {
+  // Section 0
   .heroVariable { margin-left: 32vw; }
+
+  // Section 1
+  .portrait { margin: 10vh 35vw 5vh; }
+  .bio { margin: 0 10vw; text-align: center; }
+
+  // Section 3
+  #blogBlock {
+    width: 90vw;
+    height: 35vh;
+    margin-right: -4.5vw;
+    padding-right: 4.5vw;
+    padding-top: 10vh;
+  }
+
+  .blogBlockText { width: 90%; max-width: 90%; font-size: 4em; }
+
+  #section3 h4 {
+    width: 90vw;
+    margin-top: calc(35vh + 30px);
+    text-align: left;
+    font-size: 16pt;
+  }
+  #section3 .tagsContainer { width: 80vw; }
+
+  // Section 4
+  #section4 {
+    height: 64vh;
+    .footerLeft { width: 100%; text-align: center; padding-left: 0; }
+    .footerRight {
+      float: none;
+      margin-top: 0;
+      width: 100vw;
+      display: block;
+    }
+    .socialIcons {
+      margin: 5vh 25vw;
+      img { float: none; }
+    }
+  }
 }
 
 @media screen and (min-width: 520px) {
-  #hero .carousel-inner .item img { height: 70vh; }
+//  #hero .carousel-inner .item img { height: 70vh; }
   .carousel-control { margin-top: 35vh; }
 }
 
 @media screen and (max-width: 520px) {
-  #hero .carousel-inner .item img { height: 30vh; }
+//  #hero .carousel-inner .item img { height: 30vh; }
   .carousel-control { margin-top: 60vh; }
+  .heroCaption, .heroVariable { display: none; }
+  .heroSmall1, .heroSmall2, .heroSmall3 { display: block; }
 }
 
 @media screen and (max-width: 430px) {
   .heroVariable { margin-left: 34vw; }
+  #section1 { height: 150vh; }
+  #section2 { height: 200vh; }
 }

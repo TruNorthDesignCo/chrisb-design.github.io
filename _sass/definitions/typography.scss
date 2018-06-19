@@ -3,7 +3,7 @@ a:hover { color: $roarange; }
 a:visited { color: $bluejade; }
 
 h1 {
-  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
   font-size: 10em;
   line-height: 0;
   a {
@@ -15,7 +15,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
   font-size: 5em;
 }
 
@@ -24,7 +24,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
   font-size: 2em;
   line-height: 1.5em;
 }
@@ -43,7 +43,7 @@ h4 {
 .tags:hover { background-color: $roarange; }
 
 .rightLink {
-  font-family: 'Covered By Your Grace', 'Raleway thin', sans-serif;
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
   font-size: 2em;
   text-align: right;
   text-decoration: none !important;
@@ -63,9 +63,9 @@ h4 {
   text-align: center;
 }
 
-.super { vertical-align: super; font-size: 2.5vh }
-.sub { vertical-align: sub; font-size: 2.5vh }
+.super { vertical-align: super; font-size: 2.5vh; line-height: .8em; }
+.sub { vertical-align: sub; font-size: 2.5vh; line-height: .8em; }
 
 .sans {
-  font-family: 'Raleway light', 'Trebuchet', sans-serif;
+  font-family: 'Raleway', 'Trebuchet', sans-serif;
 }
