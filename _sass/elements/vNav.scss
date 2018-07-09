@@ -1,0 +1,58 @@
+// Vertical Navigation Dots
+.vNav {
+  position: fixed;
+  top: 70%;
+  right: 1%;
+  width: 50px;
+  z-index: 10;
+  list-style-type: none;
+  ul {
+  position: relative;
+  padding: 3px;
+  padding-left: 35%;
+    li{
+      position: relative;
+      padding-bottom: 20px;
+      padding-left: 35%;
+      color: $mottled;
+    }
+  }
+}
+
+.vNav a{
+  display: block;
+  width: 8px;
+  height: 8px;
+  text-indent: -9999px;
+  border-radius: 50%;
+  border: 2px solid;
+  border-color: $mottled;
+  text-decoration: none;
+}
+
+.vNav a:hover{
+  border-radius: 50%;
+  background-color: $bluejade;
+  text-decoration: none;
+}
+
+.vNav a.active{
+  border-radius: 50%;
+  background-color: $bluejade;
+  border-color: $bluejade;
+  text-decoration: none;
+}
+
+.label {
+  position: relative;
+  top: -180%;
+  right: 2vw;
+  width: 100%;
+  text-align: right;
+  font-size: 1em;
+  color: $transparent;
+//  color: $mottled;
+  display: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}

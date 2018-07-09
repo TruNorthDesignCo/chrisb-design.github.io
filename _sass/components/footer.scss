@@ -1,0 +1,45 @@
+/*
+.footerLeft {
+//  float: left;
+  width: 40vw;
+  min-width: 312px;
+  padding: 20px 0 0 3vw;
+}
+
+.footerRight {
+  float: right;
+  width: 60vw;
+  min-width: 312px;
+  margin-top: -25vh;
+}
+*/
+
+.socialIcons {
+  position: relative;
+  height: 8vw;
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 360px;
+  padding-left: 30px;
+  img {
+    float: left;
+    height: 45px;
+//    max-height: 45px;
+//    width: 8vw;
+//    min-width: 30px;
+//    max-width: 45px;
+    margin: 1vh 2%;
+  }
+}
+
+#copyrightBar {
+  height: 30px;
+  background-color: $gray80;
+  width: 100%;
+  bottom: 0;
+  padding: 7px 0 0 15px;
+  color: $gray50;
+  font-size: 8.5pt;
+  font-family: Raleway, sans-serif;
+  text-align: center;
+}

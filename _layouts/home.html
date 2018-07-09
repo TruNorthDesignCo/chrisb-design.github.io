@@ -19,9 +19,9 @@
   <nav id="nav">
     <span id="wordmark">Chris Barfuss</span>
     <ul>
-      <li>Blog</li>
-      <li>Gallery</li>
-      <li>Contact</li>
+      <a href="/work"><li>Work</li></a>
+      <a href="/blog"><li>Blog</li></a>
+      <a class="bottomScroll"><li>Contact</li></a>
     </ul>
   </nav>
 
@@ -79,10 +79,11 @@
       -->
 
       <!-- Wrapper for slides -->
+      <p class="heroSmall1">Graphic<br /> Designer</p>
+      <p class="heroSmall2">Web Developer</p>
+      <p class="heroSmall3">Marketing<br /> Specialist</p>
+      <p class="heroCaption">Need a <span class="captionQuestion">?</span><span class="blankSpace">______</span><br /><br />I'm Your Guy.</p>
       <div class="carousel-inner">
-
-        <p class="heroCaption">Need a <span class="captionQuestion">?</span><span class="blankSpace">______</span><br /><br />I'm Your Guy.</p>
-        <p class="heroSmall1">Graphic<br /> Designer</p> <p class="heroSmall2">Web Developer</p> <p class="heroSmall3">Marketing<br /> Specialist</p>
 
         <div class="item active">
           <p class="heroVariable">Graphic Designer</p>
@@ -178,7 +179,7 @@
         <p>Content!
         <span class="lipsum"><span class="lipsum"><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum egestas egestas. Nunc sagittis commodo vulputate. Curabitur condimentum euismod pharetra. Sed ut risus ut nisl tristique elementum. Ut sagittis nisi luctus commodo consectetur. Proin luctus, arcu eu facilisis imperdiet, libero quam elementum ex, quis suscipit est velit a ligula. Nunc tristique, lacus ut mollis tristique, nunc leo condimentum quam, ut maximus ex ligula quis metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
         </span></p>
-        <a href="#" class="rightLink"><i class="fas fa-long-arrow-alt-right"></i>&nbsp; View Work Samples</a>
+        <a href="/work" class="rightLink"><i class="fas fa-long-arrow-alt-right"></i>&nbsp; View Work Samples</a>
       </div>
     </div>
   </div>
@@ -190,7 +191,7 @@
 
     <div id="blogBlock">
       <div class="blogBlockText">
-        <a href="#">Read the Blog</a>
+        <a href="/blog">Read the Blog</a>
       </div>
       <img id="blogPhoto" src="/assets/images/photos/handwritten.jpg">
     </div>
@@ -212,15 +213,15 @@
 
 <!------------------------- Section 4 ----------------------------------------->
   <a name="section4"></a>
-  <div id="section4" class="par" data-name="social">
-    <div class="footerLeft">
+  <div id="section4" class="par" data-name="social" align="center">
+<!--    <div class="footerLeft"> -->
       <h2>Let's Chat.</h2>
       <p><a href="mailto:chrisbarfuss@live.com">chrisbarfuss@live.com</a>&nbsp; | &nbsp;
       <a href="tel:12083125083">208.312.5083</a></p>
-    </div>
+<!--    </div> -->
 
-    <div class="footerRight">
-      <div class="socialIcons">
+<!--    <div class="footerRight"> -->
+      <div class="socialIcons" align="center">
         <a href="https://www.facebook.com/chrisbarfuss22"><!--<img src="/assets/images/ui/social/round_shade/facebook-Icon.png"></a> -->
         <a href="https://www.facebook.com/chrisbarfuss22"><img src="/assets/images/ui/social/long_shadow/Facebook.png"></a>
         <a href="https://twitter.com/_thatdesignguy"><!--<img src="/assets/images/ui/social/round_shade/Twitter-Icon.png"></a> -->
@@ -234,7 +235,7 @@
           <a href="https://github.com/chrisb-design"><img src="/assets/images/ui/social/long_shadow/Github.png"></a>
         </span>
       </div>
-    </div>
+<!--    </div> -->
   </div>
 
   <div id="copyrightBar">
@@ -243,4 +244,18 @@
 <!----------------------- End Section 4 --------------------------------------->
 
 </body>
+
+<!-- Contact Modal
+<div class="modal fade" id="contact" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        Contact content goes here.
+        <br />
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2939.1576445854525!2d-114.47293938413438!3d42.55194537917449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54aca3a07e382b7b%3A0x82c251b1bf5008e2!2sPositive+Action%2C+Inc.!5e0!3m2!1sen!2sus!4v1523653964262" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div> -->
 </html>

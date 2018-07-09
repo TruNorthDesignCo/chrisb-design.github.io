@@ -8,7 +8,6 @@
 @media screen and (min-width: 700px) {
   .heroVariable { margin-left: 30vw; }
   #hero .carousel-inner .item img { height: 100vh; }
-  .socialIcons { right: -20vw; }
   .blogBlockText { font-size: 7em; }
 }
 
@@ -29,7 +28,11 @@
     padding-top: 10vh;
   }
 
-  .blogBlockText { width: 90%; max-width: 90%; font-size: 4em; }
+  .blogBlockText {
+    width: 90%;
+    max-width: 90%;
+    font-size: 4em;
+  }
 
   #section3 h4 {
     width: 90vw;
@@ -38,22 +41,6 @@
     font-size: 16pt;
   }
   #section3 .tagsContainer { width: 80vw; }
-
-  // Section 4
-  #section4 {
-    height: 64vh;
-    .footerLeft { width: 100%; text-align: center; padding-left: 0; }
-    .footerRight {
-      float: none;
-      margin-top: 0;
-      width: 100vw;
-      display: block;
-    }
-    .socialIcons {
-      margin: 5vh 25vw;
-      img { float: none; }
-    }
-  }
 }
 
 @media screen and (min-width: 520px) {

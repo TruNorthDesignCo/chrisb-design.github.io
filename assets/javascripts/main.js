@@ -12,6 +12,13 @@ $(document).ready(function($){
     return false;
   });
 
+  $('.bottomScroll').click(function(){
+    $('html, body').animate({
+      scrollTop: $("#section4").offset().top
+    }, 1000);
+    return false;
+  });
+
         $('.vNav ul li a').click(function () {
     $('.vNav ul li a').removeClass('active');
       $(this).addClass('active');
