@@ -25,7 +25,10 @@ twitter_username: _thatdesignguy
 github_username:  chrisb-design
 
 # Build settings
-markdown: GFM
+# change this when ready to build
+# markdown: GFM
+markdown: kramdown
+
 plugins:
   - jekyll-feed
 

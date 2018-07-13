@@ -85,3 +85,6 @@ $(document).ready(function(){
 		return false;
 	});
 });
+
+
+// Tag Displaying and Filtering

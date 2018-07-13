@@ -1,0 +1,28 @@
+.headWrapper {
+  height: 100vh;
+
+  img {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    box-shadow: 0 0 3px $transparent-black-med;
+  }
+
+  h1 {
+    position: absolute;
+    z-index: 3;
+    top: 20vh;
+    color: $white;
+  //    mix-blend-mode: difference;
+    line-height: 0.7em;
+    text-align: center;
+    text-shadow: 2px 2px 3px $transparent-black-med;
+    width: 75%;
+    font-size: 15vw;
+    margin: 120px 12%;
+    pointer-events: none;
+  }
+}

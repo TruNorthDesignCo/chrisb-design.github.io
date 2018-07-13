@@ -1,3 +1,16 @@
 body {
 //  background-color: #888;
 }
+
+.contentWrapper {
+//  height: auto;
+  min-height: 105vh;
+  padding-bottom: 30px;
+}
+
+.tagsContainer {
+  float: left;
+  clear: left;
+  text-align: center;
+  padding: 0 30px;
+}

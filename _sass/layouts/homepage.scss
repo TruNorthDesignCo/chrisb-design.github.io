@@ -50,7 +50,7 @@
 #section2 {
   position: static;
   z-index: 3;
-  height: 151vh;
+  height: 141vh;
 //  min-height: 600px;
   font-family: Raleway, sans-serif;
 }
@@ -78,7 +78,7 @@
 #section3 {
   position: static;
   z-index: 1;
-  height: calc(131vh + 10px);
+  height: calc(121vh + 10px);
 //  min-height: 450px;
   margin-top: -20vh;
   padding-top: 20vh;
@@ -105,15 +105,6 @@
     padding: 0 15px;
     font-size: 1em;
   }
-  .tagsContainer {
-    float: left;
-    clear: left;
-    padding: 0 15px;
-    margin-left: 15px;
-    width: 30vw;
-    text-align: center;
-  }
-  .tagsContainer:nth-child(n+1) { margin-left: calc(10vw - 30px); }
 }
 
 #blogBlock {
