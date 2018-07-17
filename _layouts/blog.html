@@ -40,9 +40,9 @@
       <h4><i class="filterIcon fas fa-filter"></i>&nbsp; &nbsp; Filter by Tag:</h4>
       <p>
         {% for tag in site.tags %}
-        <span class="tags inline">
+        <span class="tags inline" onclick="$('.{{ tag[0] }}').toggleClass('inactive'); $(this).toggleClass('faded');">
 <!--          <a href="/tags/{{ tag[0] }}/">{{ tag[0] }}</a> -->
-          <a onclick="showhide('{{ tag[0] }}')">{{ tag[0] }}</a>
+          {{ tag[0] }}
         </span>
         {% endfor %}
       </p>

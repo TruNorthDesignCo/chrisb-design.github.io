@@ -26,27 +26,25 @@ clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
   background-color: $gray80;
   background-blend-mode: multiply;
   font-family: Raleway, sans-serif;
-
   p { padding: 0 15px 0 60px; }
   a { color: $white; text-decoration: none; }
   h4 { color: $white; }
-
-  span {
+  span { //inline tags
     padding: 5px 10px;
     display: inline-block;
     text-align: center;
     border: solid 1px $gray10;
     border-radius: 3px;
+    cursor: pointer;
+  }
+  span:hover {
+    background-color: $bluejade;
+    transition: all 0.25s linear;
   }
 }
-
 .tagsColumn:hover {
   right: 0;
   transition: right 0.5s ease-out;
-}
-
-.filterIcon {
-
 }
 
 .inline {
@@ -57,6 +55,21 @@ clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
     display: inline;
     list-style-type: none;
   }
+}
+
+.inactive {
+  display: none;
+}
+
+.faded {
+  color: $gray50;
+  border-color: $gray50 !important;
+  transition: color 0.5s linear;
+  transition: border-color 0.5s linear;
+}
+span.faded:hover {
+  background-color: $bluejade;
+  transition: background-color 0.25s linear;
 }
 
 #recent {
@@ -71,6 +84,7 @@ clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
   padding: 15px 30px;
   font-family: Raleway, sans-serif;
   text-overflow: ellipsis;
+  box-shadow: 1px 1px 3px $transparent-black-med;
 
   a { color: $white; }
   a:hover { color: $gray80 !important; }
@@ -94,8 +108,6 @@ clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
    color: $gray10;
    padding: 5px 0 5px 30px;
    margin-top: -11px;
+   box-shadow: 1px 1px 3px $transparent-black-med;
  }
 }
-
-.hide { display: none; }
-.display { display: block; }

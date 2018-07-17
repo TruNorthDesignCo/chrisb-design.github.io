@@ -3,9 +3,7 @@ layout: post
 title: "Category Test"
 date: 2018-07-06
 category: test
-tags:
- - word
- - statement
+tags: [word, statement, textstuffs]
 # image: "/assets/images/photos/color_cards.jpg"
 ---
 
