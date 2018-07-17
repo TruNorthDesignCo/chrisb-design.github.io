@@ -2,7 +2,7 @@
 layout: post
 title: "Category Test"
 date: 2018-07-06
-category: test
+category: jekyll
 tags: [word, statement, textstuffs]
 # image: "/assets/images/photos/color_cards.jpg"
 ---

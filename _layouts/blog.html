@@ -40,7 +40,12 @@
       <h4><i class="filterIcon fas fa-filter"></i>&nbsp; &nbsp; Filter by Tag:</h4>
       <p>
         {% for tag in site.tags %}
-        <span class="tags inline" onclick="$('.{{ tag[0] }}').toggleClass('inactive'); $(this).toggleClass('faded');">
+        <span class="tags inline" onclick= "
+        $('.{{ tag[0] }}').siblings('article').addClass('inactive');
+        $('.{{ tag[0] }}').removeClass('inactive');
+        $(this).siblings('span').addClass('faded');
+        $(this).removeClass('faded');
+        ">
 <!--          <a href="/tags/{{ tag[0] }}/">{{ tag[0] }}</a> -->
           {{ tag[0] }}
         </span>
@@ -76,7 +81,8 @@
 
 <!-- All Posts -->
     <div id="archives">
-      {% for category in site.categories %}
+<!-- Activate this if you want to re-enable categories (this will break the tag filter) -->
+<!--      {% for category in site.categories %}
         <div class="archive-group">
           {% capture category_name %}{{ category | first }}{% endcapture %}
           <div id="#{{ category_name | slugize }}"></div>
@@ -85,6 +91,7 @@
           <div class="{{ category_name }}">
             <h3 class="category-head">{{ category_name }}</h3>
             <a name="{{ category_name | slugize }}"></a>
+            -->
             {% for post in site.categories[category_name] %}
             <article class="archive-item {{ post.tags [0] }} {{ post.tags [1] }} {{ post.tags [2] }}">
               <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
