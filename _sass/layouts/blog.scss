@@ -5,23 +5,97 @@
   padding: 100px 0 30px 30px;
   background-image: url("/assets/images/textures/pixel_weave.png");
   background-repeat: repeat;
+  font-family: Raleway, sans-serif;
 }
 
 .tagsColumn {
-  float: right;
-  right: 0;
-  display: fixed;
-  max-width: 300px;
-  height: 75vh;
+  z-index: 5;
+  position: fixed;
+  -webkit-clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
+clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
+  right: -240px;
+  transition: right 0.5s ease-out;
+  width: 300px;
+  height: 100vh;
+  top: 130px;
   margin-left: 30px;
-  margin-right: 0;
   padding-bottom: 15px;
-  background-image: url("/assets/images/textures/tweed.png");
+  padding-left: 15px;
+  background-image: url("/assets/images/textures/funky-lines-rev.png");
   background-repeat: repeat;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  background-color: $gray80;
+  background-blend-mode: multiply;
+  font-family: Raleway, sans-serif;
 
-  p { padding: 30px 30px 0 30px; }
+  p { padding: 0 15px 0 60px; }
+  a { color: $white; text-decoration: none; }
+  h4 { color: $white; }
+
+  span {
+    padding: 5px 10px;
+    display: inline-block;
+    text-align: center;
+    border: solid 1px $gray10;
+    border-radius: 3px;
+  }
 }
 
-.inline { float: none; }
+.tagsColumn:hover {
+  right: 0;
+  transition: right 0.5s ease-out;
+}
+
+.filterIcon {
+
+}
+
+.inline {
+  display: inline;
+  position: relative;
+  float: none;
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+}
+
+#recent {
+  width: 100vw;
+  height: 100%;
+  margin-left: -30px;
+  margin-bottom: 30px;
+  height: 315px;
+  background-image: url("/assets/images/textures/pixel_weave.png");
+  background-color: $bluejade;
+  background-blend-mode: multiply;
+  padding: 15px 30px;
+  font-family: Raleway, sans-serif;
+  text-overflow: ellipsis;
+
+  a { color: $white; }
+  a:hover { color: $gray80 !important; }
+  h4 { margin-top: -15px; }
+  .rightLink { margin-top: 0; }
+  .tags:hover { background-color: $gray50 !important; }
+}
+
+#archives {
+  column-count: 2;
+  column-fill: balance;
+  column-gap: 2em;
+ .archive-group, .archive-item { break-inside: avoid-column;}
+ margin-top: 15px;
+
+ h3 {
+   width: 100%;
+   background-color: $transparent-white;
+   background-image: url("/assets/images/textures/pixel_weave.png");
+   background-blend-mode: difference;
+   color: $gray10;
+   padding: 5px 0 5px 30px;
+   margin-top: -11px;
+ }
+}
+
+.hide { display: none; }
+.display { display: block; }

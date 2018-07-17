@@ -88,3 +88,14 @@ $(document).ready(function(){
 
 
 // Tag Displaying and Filtering
+function showhide(id){
+        if (document.getElementByClassName) {
+          var divid = document.getElementByClassName(class);
+          var divs = document.getElementsByClassName("hide");
+          for(var i=0;i<divs.length;i++) {
+            divs[i].style.display = "none";
+          }
+          divid.style.display = "block";
+        }
+        return false;
+ }

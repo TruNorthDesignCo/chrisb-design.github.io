@@ -33,64 +33,83 @@
 <!--------------------------- Start Body ---------------------------------------->
 
 <div class="contentWrapper">
-
   <div class="blogFrame">
+
+<!-- Tags Column -->
     <div class="tagsColumn">
-      <p><strong>Jump to Category:</strong></p>
-<!--
-      <div class="tagsContainer">
-        <a href="#"><span class="tags">word</span></a>
-        <a href="#"><span class="tags">statement</span></a>
-        <a href="#"><span class="tags">wordy word</span></a>
-        <a href="#"><span class="tags">textstuff</span></a>
+      <h4><i class="filterIcon fas fa-filter"></i>&nbsp; &nbsp; Filter by Tag:</h4>
+      <p>
+        {% for tag in site.tags %}
+        <span class="tags inline">
+<!--          <a href="/tags/{{ tag[0] }}/">{{ tag[0] }}</a> -->
+          <a onclick="showhide('{{ tag[0] }}')">{{ tag[0] }}</a>
+        </span>
+        {% endfor %}
+      </p>
+    </div>
+
+<!-- Most Recent Post -->
+    <div id="recent">
+      <h3>Most Recent Post:</h3>
+      {% for post in site.posts limit:1  %}
+        {% if forloop.last %}
+          <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+          <p>
+            Published: <strong>{{ post.date | date: '%B %d, %Y' }}</strong><br />
+            Tags:
+              <span class="tags inline">
+                {{ post.tags[0] }}
+              </span>
+              <span class="tags inline">
+                {{ post.tags[1] }}
+              </span>
+              <span class="tags inline">
+                {{ post.tags[2] }}
+              </span>
+              <br />
+            <span class="excerpt">{{ post.excerpt }}</span>
+          </p><br />
+          <a href="{{ post.url | prepend: site.baseurl }}" class="rightLink"><i class="fas fa-long-arrow-alt-right"></i>&nbsp; Read This</a>
+        {% endif %}
+      {% endfor %}
       </div>
--->
-      {% comment %}
-      =======================
-      The purpose of this snippet is to list all the tags you have in your site.
-      =======================
-      {% endcomment %}
-      {% for tag in tags %}
-      	<a href="#{{ tag | slugify }}"> {{ tag }} </a>
+
+<!-- All Posts -->
+    <div id="archives">
+      {% for category in site.categories %}
+        <div class="archive-group">
+          {% capture category_name %}{{ category | first }}{% endcapture %}
+          <div id="#{{ category_name | slugize }}"></div>
+          <p></p>
+
+          <div class="{{ category_name }}">
+            <h3 class="category-head">{{ category_name }}</h3>
+            <a name="{{ category_name | slugize }}"></a>
+            {% for post in site.categories[category_name] %}
+            <article class="archive-item {{ post.tags [0] }} {{ post.tags [1] }} {{ post.tags [2] }}">
+              <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+              <p>
+                Published: <strong>{{ post.date | date: '%B %d, %Y' }}</strong><br />
+                Tags:
+                  <span class="tags inline">
+                    {{ post.tags[0] }}
+                  </span>
+                  <span class="tags inline">
+                    {{ post.tags[1] }}
+                  </span>
+                  <span class="tags inline">
+                    {{ post.tags[2] }}
+                  </span><br />
+                {{ post.excerpt }}
+              </p>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
       {% endfor %}
     </div>
 
-
-
-    <ul>
-      {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
-        <p>
-          Published <strong>{{ post.date }}</strong><br />
-          Categories: <span class="tags inline">{{ post.categories |  }}</span><br />
-          {{ post.excerpt }}
-        </p><br />
-      </li>
-      {% endfor %}
-    </ul>
   </div>
-
-
-  <div id="archives">
-{% for category in site.categories %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
-
-    <h3 class="category-head">{{ category_name }}</h3>
-    <a name="{{ category_name | slugize }}"></a>
-    {% for post in site.categories[category_name] %}
-    <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-    </article>
-    {% endfor %}
-  </div>
-{% endfor %}
-</div>
-
-
 </div>
 
   <!------------------------- Section 4 ----------------------------------------->

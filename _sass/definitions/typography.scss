@@ -20,7 +20,8 @@ h2 {
 }
 
 h3 {
-
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
+  font-size: 3em;
 }
 
 h4 {
@@ -28,19 +29,6 @@ h4 {
   font-size: 2em;
   line-height: 1.5em;
 }
-
-.tags {
-  font-family: Raleway, sans-serif;
-  font-weight: 200;
-  padding: 5px 8px;
-  background-color: $gray80;
-  color: $white;
-  display: inline-block;
-  border-radius: 2px;
-  float: left;
-  margin: 10px 3px;
-}
-.tags:hover { background-color: $roarange; }
 
 .rightLink {
   font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
@@ -69,3 +57,16 @@ h4 {
 .sans {
   font-family: 'Raleway', 'Trebuchet', sans-serif;
 }
+
+.tags {
+  font-family: Raleway, sans-serif;
+  font-weight: 200;
+  padding: 2.5px 8px;
+  background-color: $gray80;
+  color: $white;
+  display: inline-block;
+  border-radius: 2px;
+  float: left;
+  margin: 5px;
+}
+.tags:hover { background-color: $roarange; }

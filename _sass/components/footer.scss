@@ -1,3 +1,21 @@
+//Section 4
+#section4 {
+  height: 220px;
+  margin-top: -5vh;
+  padding-top: 2.5vh;
+//  min-height: 200px;
+  font-family: Raleway, sans-serif;
+  background-image: url('/assets/images/textures/tweed.png');
+  color: $white;
+  box-shadow: -1px -1px 5px $gray80;
+
+  h2 {
+    color: $white;
+    text-shadow: 1px 1px 1px $black;
+    margin-top: 0;
+  }
+}
+
 /*
 .footerLeft {
 //  float: left;
