@@ -2,7 +2,7 @@
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  padding: 100px 0 30px 30px;
+  padding: 100px 60px 30px;
   background-image: url("/assets/images/textures/pixel_weave.png");
   background-repeat: repeat;
   font-family: Raleway, sans-serif;
@@ -12,12 +12,12 @@
   z-index: 5;
   position: fixed;
   -webkit-clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
-clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
   right: -240px;
   transition: right 0.5s ease-out;
   width: 300px;
-  height: 100vh;
-  top: 130px;
+  height: 1000px;
+  top: 100px;
   margin-left: 30px;
   padding-bottom: 15px;
   padding-left: 15px;
@@ -28,7 +28,10 @@ clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
   font-family: Raleway, sans-serif;
   p { padding: 0 15px 0 60px; }
   a { color: $white; text-decoration: none; }
-  h4 { color: $white; }
+  h4 {
+    color: $white;
+    i { height: 30px; }
+  }
   span { //inline tags
     padding: 5px 10px;
     display: inline-block;
@@ -72,18 +75,21 @@ span.faded:hover {
   transition: background-color 0.25s linear;
 }
 
+.reset {
+  width: 100%;
+  background-color: $white;
+  color: $black;
+}
+
 #recent {
   width: 100vw;
-  height: 100%;
-  margin-left: -30px;
+  margin-left: -60px;
   margin-bottom: 30px;
-  height: 315px;
   background-image: url("/assets/images/textures/pixel_weave.png");
   background-color: $bluejade;
   background-blend-mode: multiply;
-  padding: 15px 30px;
+  padding: 15px 20vw 30px;
   font-family: Raleway, sans-serif;
-  text-overflow: ellipsis;
   box-shadow: 1px 1px 3px $transparent-black-med;
 
   a { color: $white; }
@@ -93,7 +99,7 @@ span.faded:hover {
 }
 
 #archives {
-  column-count: 2;
+  column-count: 3;
   column-fill: balance;
   column-gap: 2em;
  .archive-group, .archive-item { break-inside: avoid-column;}

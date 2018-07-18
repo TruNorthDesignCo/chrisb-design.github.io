@@ -26,8 +26,8 @@ github_username:  chrisb-design
 
 # Build settings
 # change this when ready to build
-# markdown: GFM
-markdown: kramdown
+markdown: GFM
+# markdown: kramdown
 
 plugins:
   - jekyll-feed

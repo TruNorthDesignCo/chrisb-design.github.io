@@ -48,6 +48,15 @@
 //    max-width: 45px;
     margin: 1vh 2%;
   }
+
+  .icon img {
+    filter: grayscale(70%);
+    transition: filter 0.25s ease-in;
+  }
+  .icon img:hover {
+    filter: grayscale(0%);
+    transition: filter 0.25s ease-in;
+  }
 }
 
 #copyrightBar {
