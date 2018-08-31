@@ -30,6 +30,12 @@ h4 {
   line-height: 1.5em;
 }
 
+h5 {
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
+  font-size: 1.6em;
+  line-height: 1.5em;
+}
+
 .rightLink {
   font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
   font-size: 2em;
@@ -47,9 +53,8 @@ h4 {
   font-family: courier, monospace;
 }
 
-.centered {
-  text-align: center;
-}
+.centered { text-align: center !important; }
+.noIndent { text-indent: 0 !important; }
 
 .super { vertical-align: super; font-size: 2.5vh; line-height: .8em; }
 .sub { vertical-align: sub; font-size: 2.5vh; line-height: .8em; }
@@ -70,4 +75,5 @@ h4 {
   border-radius: 2px;
   float: left;
   margin: 5px;
+  line-height: 2em;
 }

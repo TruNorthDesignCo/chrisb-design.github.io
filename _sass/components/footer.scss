@@ -1,6 +1,6 @@
 //Section 4
 #section4 {
-  height: 220px;
+  height: 100vh;
   margin-top: -5vh;
   padding-top: 2.5vh;
 //  min-height: 200px;
@@ -12,7 +12,7 @@
   h2 {
     color: $white;
     text-shadow: 1px 1px 1px $black;
-    margin-top: 0;
+    margin-top: 25vh;
   }
 }
 
@@ -46,7 +46,7 @@
 //    width: 8vw;
 //    min-width: 30px;
 //    max-width: 45px;
-    margin: 1vh 2%;
+    margin: 10vh 2%;
   }
 
   .icon img {
