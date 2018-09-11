@@ -3,16 +3,28 @@
   color: $roarange;
 }
 
+@mixin transition($time, $property: all, $easing: ease-in) {
+    transition: $property $time $easing;
+}
+
+// ------------- VARIABLES ------------- //
+$parallax-offset: 30vh;
+$content-offset: 40vh;
+$transition-speed: 1.2s;
+$slide-number: 5;
+
+// body { overflow: hidden; }
+// section { height: 100vh; }
+
+
 //Section 0 (Hero)
 #section0 {
-  height: 100vh;
 //  min-height: 450px;
   font-family: Raleway, sans-serif;
 }
 
 //Section 1 (Bio)
 #section1 {
-  height: 121vh;
 //  min-height: 450px;
   font-family: Raleway, sans-serif;
   background-image: url("/assets/images/textures/funky-lines.png");
@@ -50,7 +62,6 @@
 #section2 {
   position: static;
   z-index: 3;
-  height: 141vh;
 //  min-height: 600px;
   font-family: Raleway, sans-serif;
 }

@@ -117,3 +117,8 @@ span.faded:hover {
    box-shadow: 1px 1px 3px $transparent-black-med;
  }
 }
+
+.postImage {
+  object-fit: cover;
+  max-height: 300px;
+}
