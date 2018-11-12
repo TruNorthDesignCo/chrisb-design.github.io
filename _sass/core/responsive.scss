@@ -47,11 +47,6 @@
   #section3 .tagsContainer { width: 80vw; }
 }
 
-@media screen and (min-width: 520px) {
-//  #hero .carousel-inner .item img { height: 70vh; }
-  .carousel-control { margin-top: 35vh; }
-}
-
 @media screen and (max-width: 520px) {
   #nav {
     text-align: center;
@@ -63,7 +58,6 @@
   .blogFrame { padding: 150px 60px 30px 30px; }
 
 //  #hero .carousel-inner .item img { height: 30vh; }
-  .carousel-control { margin-top: 60vh; }
   .heroCaption, .heroVariable { display: none; }
   .heroSmall1, .heroSmall2, .heroSmall3 { display: block; }
   #archives {

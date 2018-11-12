@@ -18,16 +18,20 @@
 @import "layouts/homepage";
 @import "layouts/blog";
 @import "layouts/work";
+@import "layouts/brand";
 @import "layouts/toolkit";
 @import "layouts/post";
 
 //components
 @import "components/nav";
+@import "components/vNav";
 @import "components/footer";
 
 //elements
-@import "elements/vNav";
+@import "onePageScroll/component";
+@import "onePageScroll/onepage-scroll";
 @import "elements/hero";
+@import "elements/contact";
 @import "elements/scrollDown";
 @import "elements/photoBanner";
 @import "elements/headWrapper";

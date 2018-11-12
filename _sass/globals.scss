@@ -2,10 +2,13 @@ body {
 //  background-color: #888;
 }
 
+.locked { overflow: hidden; }
+
 .contentWrapper {
 //  height: auto;
   min-height: 95vh;
   padding-bottom: 30px;
+  margin-top: -115px;
 //  overflow: auto;
 }
 

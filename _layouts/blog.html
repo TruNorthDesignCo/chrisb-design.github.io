@@ -15,31 +15,29 @@
 </head>
 
 <body>
-    <nav id="nav">
-      <span id="wordmark"><a href="/">Chris Barfuss</a></span>
-      <ul>
-        <a href="/work"><li>Work</li></a>
-        <a href="/blog"><li>Blog</li></a>
-        <a class="bottomScroll"><li>Contact</li></a>
-      </ul>
-    </nav>
-
-    <div id="wordmarkMiniBox">
-      <div id="wordmarkMini">
-        <span>CB</span>
-      </div>
+  <div id="wordmarkMiniBox">
+    <div id="wordmarkMini">
+      <span>CB</span>
     </div>
+  </div>
+
+  <nav id="nav">
+    <span id="wordmark"><a href="/">Chris Barfuss</a></span>&nbsp; | &nbsp;
+    BLOG
+    <br />
+
+    <span class="tags inline filterButton"><i class="filterIcon fas fa-filter"></i>&nbsp; &nbsp; filter by category</span>
+  </nav>
 
 <!--------------------------- Start Body ---------------------------------------->
 
 <div class="contentWrapper">
-  <div class="blogFrame">
+  <div class="contentFrame">
 
 <!-- Tags Column -->
     <div class="tagsColumn">
-      <h4><i class="filterIcon fas fa-filter"></i>&nbsp; &nbsp; Filter by Tag:</h4>
       <p>
-        <span class="tags inline reset" onclick="
+        <span class="tags inline tagsReset" onclick="
           $(this).siblings('span').removeClass('faded');
           $('#archives').children().removeClass('inactive');
           $(this).removeClass('faded');
@@ -78,12 +76,13 @@
               </span>
             <br />
             {{ post.excerpt }}
-            <br />
-            <a href="{{ post.url | prepend: site.baseurl }}" class="rightLink"><i class="fas fa-long-arrow-alt-right"></i>&nbsp; Read This</a>
-          </p><br />
+            <!-- <br />
+            <a href="{{ post.url | prepend: site.baseurl }}" class="rightLink"><i class="fas fa-long-arrow-alt-right"></i>&nbsp; Read This</a> -->
+          </p>
         {% endif %}
       {% endfor %}
       </div>
+      <hr width="80%">
 
 <!-- All Posts -->
     <div id="archives">

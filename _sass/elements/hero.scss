@@ -4,55 +4,57 @@
 #hero .carousel-inner .item { height: 100vh; }
 #hero .carousel-inner .item img { height: 100vh; }
 
-.heroCaption {
-  z-index: 3;
-  color: $white;
-  font-size: 4.5vw;
-  line-height: 4vw;
-  font-weight: bold;
-  padding: 5px 0 5px 30px;
+.heroWrapper {
+  z-index: 2;
   position: absolute;
-  margin-left: 10vw;
-  vertical-align: middle;
-  top: 30%;
-  font-family: Raleway light, sans-serif;
+  right: 0;
+  bottom: 3vh;
+  width: 650px;
+}
+
+.heroGreeting {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 7em;
+  float: left;
+  padding-right: 15px;
   text-shadow: 1px 1px 8px $black;
-  .blankSpace {
-    pointer-events: none;
-    position: inherit;
-    z-index: 3;
-    color: $transparent;
-    padding-bottom: 1vw;
-    border-bottom: solid 3px $white;
-    padding-right: 37vw;
-    text-shadow: none;
-  }
-  .captionQuestion {
-    float: right;
-    font-size: 5vw;
-    text-shadow: 1px 1px 8px $black;
-    margin-left: 50vw;
-  }
+}
+
+.heroSubtext {
+  position: absolute;
+  float: right;
+  left: 160px;
+  vertical-align: bottom;
+  padding-top: 15px;
+  font-size: 2em;
+  letter-spacing: -0.5px;
+  line-height: 1.8em;
+  text-shadow: 1px 1px 8px $black;
+}
+
+.heroSpacer {
+  padding: 0 160px;
+  border-bottom: solid 2px $white;
 }
 
 .heroVariable {
-  color: $white;
+  z-index: 3;
   color: $white;
 //  mix-blend-mode: difference;
-  font-size: 6vw;
-  line-height: 4vw;
+  font-size: 3em;
   font-weight: bold;
   position: absolute;
-  display: flex;
-  padding: 5px;
-  top: 30%;
+  width: 400px;
+  bottom: calc(3vh + 20px);
+  right: 65px;
   font-family: 'Waiting for the Sunrise', sans-serif;
   text-shadow: 1px 1px 8px $black;
 }
 
 .heroSmall1, .heroSmall2, .heroSmall3 {
   display: none;
-  width: 90fvw;
+  width: 90vw;
   position: absolute;
   z-index: 2;
   color: $roarange;
@@ -82,14 +84,20 @@
   z-index: 3;
   cursor: pointer;
   position: absolute;
-  height: 50px;
-  width: 50px !important;
+  height: 25px;
+  width: 25px !important;
+  margin-top: calc(100vh - 32px);
   padding: 16px;
   color: white !important;
   font-weight: bold;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
+  background-image: none !important;
   .glyphicon-chevron-left, .glyphicon-chevron-right { font-size: 18px !important; }
 }
+
+.carousel-control:hover { background-image: none !important; }
+
+.left.carousel-control { margin-left: calc(100vw - 65px); }
 
 .carousel-control:hover { background-color: $transparent-black-light; }

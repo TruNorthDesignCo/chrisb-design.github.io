@@ -1,62 +1,14 @@
-$(document).ready(function($){
-        var parPosition = [];
-      $('.par').each(function() {
-          parPosition.push($(this).offset().top);
-      });
-
-//Soft Scroll on link click
-  $('.vNav a').click(function(){
+/*
+  // scrollDown Settings
+    //Soft scroll
+  $('#scrollDown').click(function(){
     $('html, body').animate({
       scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
     return false;
   });
-
-  $('.bottomScroll').click(function(){
-    $('html, body').animate({
-      scrollTop: $("#section4").offset().top
-    }, 1000);
-    return false;
-  });
-
-        $('.vNav ul li a').click(function () {
-    $('.vNav ul li a').removeClass('active');
-      $(this).addClass('active');
-  });
-
-     $('.vNav a').hover(function() {
-         $(this).find('.label').show();
-         }, function() {
-         $(this).find('.label').hide();
-     });
-
-         $(document).scroll(function(){
-      var position = $(document).scrollTop(),
-              index;
-              for (var i=0; i<parPosition.length; i++) {
-              if (position <= parPosition[i]) {
-                  index = i;
-                  break;
-              }
-          }
-    $('.vNav ul li a').removeClass('active');
-          $('.vNav ul li a:eq('+index+')').addClass('active');
-      });
-
-        $('.vNav ul li a').click(function () {
-    $('.vNav ul li a').removeClass('active');
-      $(this).addClass('active');
-  });
-});
-
-// scrollDown Settings
-  //Soft scroll
-$('#scrollDown').click(function(){
-  $('html, body').animate({
-    scrollTop: $( $.attr(this, 'href') ).offset().top
-  }, 500);
-  return false;
-});
+);
+*/
 
 /*
 // Blog Photo Behavior
@@ -84,4 +36,73 @@ $(document).ready(function(){
 		}, 800);
 		return false;
 	});
+});
+
+
+//hover properties on nav dots
+$(function() {
+  $('.navbar').hover(function() {
+//    $('.dotstyle li').addClass('navHover');
+    $('.navTooltips').addClass('navHover');
+  }, function() {
+    // on mouseout, reset the background colour
+//    $('.dotstyle li').removeClass('navHover');
+    $('.navTooltips').removeClass('navHover');
+  });
+});
+$(function() {
+  $('.onepage-pagination').hover(function() {
+//    $('.dotstyle li').addClass('navHover');
+    $('.navTooltips').addClass('navHover');
+  }, function() {
+//    $('.dotstyle li').addClass('navHover');
+  });
+});
+
+
+//form auto jump to next field
+$('.inputs').keyup(function () {
+    if (this.value.length == this.maxLength) {
+      $(this).next('.inputs').focus();
+    }
+});
+
+
+//character counter for subject text input
+$('.subject').keyup(function(){
+
+    if(this.value.length > $(this).attr('maxlength')){
+        return false;
+    }
+    $(this).next().html("(" +($(this).attr('maxlength') - this.value.length) +"/102)");
+
+});
+
+//Tags Column fly out
+document.querySelector('.filterButton')
+  .addEventListener('click', function() {
+    if($('.tagsColumn').css('display') == 'block') {
+    $('.filterButton').addClass('inactive');
+    $('.filterButton').removeClass('active');
+    $('.tagsColumn').slideUp();
+	} else {
+    $('.filterButton').addClass('active');
+    $('.filterButton').removeClass('inactive');
+    $('.tagsColumn').slideDown('slow');
+	}
+});
+
+// Hide Tags Column on outside click
+$('html').click(function() {
+  $('.filterButton').addClass('inactive');
+  $('.filterButton').removeClass('active');
+  $('.tagsColumn').slideUp();
+});
+
+//exceptions:
+$('.filterButton').click(function(event) {
+  event.stopPropagation();
+});
+$('.tagsColumn').click(function(event) {
+  event.stopPropagation();
 });

@@ -1,0 +1,54 @@
+.brandsGrid {
+  position: absolute;
+  width: 40vw;
+  height: 85vh;
+  right: 90px;
+  top: 90px;
+
+  td {
+    width: 150px;
+    height: 15vh;
+    padding: 5px;
+  }
+}
+
+.brandImg {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.brandJoin {
+  height: 15vh;
+  width: 150px;
+  text-align: center;
+  font-size: 2em;
+  padding: 2vh;
+  border: solid 1px $white;
+  text-transform: uppercase;
+}
+
+.contactButton {
+  margin: 15px 30px 15px 0;
+  font-size: 16pt;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white;
+  background-color: $transparent;
+  border: solid 1px $white;
+  transition: border 0.25s linear;
+  transition: color 0.25s linear;
+  padding: 10px 4vw;
+}
+
+.contactButton:hover {
+  a { color: $roarange;
+      text-decoration: none !important;
+      transition: color 0.25s linear;
+    }
+
+  color: $roarange;
+  transition: color 0.25s linear;
+  border: solid 1px $roarange;
+  transition: border 0.25s linear;
+}

@@ -1,0 +1,46 @@
+.navbar {
+  z-index: 10;
+  position: absolute;
+  width: 50px;
+  transition: width 0.1s linear;
+  background-color: $transparent-black-med;
+  transition: background-color 0.25s linear;
+  height: 100vh;
+  border-radius: 0;
+}
+
+.onepage-pagination:hover ~ .navbar, .navbar:hover {
+  background-color: $transparent-black-dark;
+  transition: background-color 0.25s linear;
+//  width: 200px;
+//  transition: width 0.1s ease-in;
+}
+
+.navHover {
+  margin-left: 170px !important;
+  transition: margin-left 0.1s  ease-in;
+}
+
+.dotstyle.dotstyle-fillup { height: 0; }
+
+.invisible { border: none; }
+
+.secondary a { background-color: $white !important; }
+.secondary a:hover { background-color: $transparent-white-med !important; }
+
+.navTooltips {
+  position: absolute;
+  pointer-events: none;
+  top: 31%;
+  left: -150px;
+  font-family: 'Raleway', 'Trebuchet', sans-serif;
+  font-size: 1.2em;
+  text-align: left;
+  color: $white;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px $black;
+  li {
+    margin: 17px 0;
+    list-style-type: none;
+  }
+}
