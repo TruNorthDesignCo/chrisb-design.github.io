@@ -1,37 +1,46 @@
-.blogFrame {
+.contentFrame {
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  padding: 100px 60px 30px;
+  padding: 100px 10vw 30px;
   background-image: url("/assets/images/textures/pixel_weave.png");
   background-repeat: repeat;
   font-family: Raleway, sans-serif;
+  p { font-size: 14pt; }
+  hr { border: solid 0.25px $gray50; margin: 45px auto; }
+}
+
+.filterButton {
+  position: absolute;
+  font-size: 14px;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+.filterButton.active {
+  display: inline;
+  color: $gray20;
+//  padding-bottom: 15px;
+  transition: color 0.2s linear;
+}
+.filterButton.inactive {
+  display: inline;
+  transition: color 0.2s linear;
 }
 
 .tagsColumn {
   z-index: 5;
   position: fixed;
-  -webkit-clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
-  clip-path: polygon(0% 0%, 0 6%, 18% 12%, 18% 100%, 100% 100%, 100% 0%);
-  right: -240px;
-  transition: right 0.5s ease-out;
-  width: 300px;
-  height: 1000px;
-  top: 100px;
+  display: none;
+  right: calc(5vw + 5px);
+  top: 120px;
+  width: 30vw;
   margin-left: 30px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  background-image: url("/assets/images/textures/funky-lines-rev.png");
-  background-repeat: repeat;
+  padding: 15px;
   background-color: $gray80;
   background-blend-mode: multiply;
-  font-family: Raleway, sans-serif;
-  p { padding: 0 15px 0 60px; }
+  border-radius: 2px;
   a { color: $white; text-decoration: none; }
-  h4 {
-    color: $white;
-    i { height: 30px; }
-  }
   span { //inline tags
     padding: 5px 10px;
     display: inline-block;
@@ -45,10 +54,6 @@
     background-color: $bluejade;
     transition: all 0.25s linear;
   }
-}
-.tagsColumn:hover {
-  right: 0;
-  transition: right 0.5s ease-out;
 }
 
 .inline {
@@ -76,25 +81,19 @@ span.faded:hover {
   transition: background-color 0.25s linear;
 }
 
-.reset {
-  width: 100%;
+.tagsReset {
   background-color: $white;
   color: $black;
 }
+.tagsReset:hover {
+  border: solid 1px $roarange !important;
+  color: $roarange;
+  background-color: $transparent !important;
+}
 
 #recent {
-  width: 100vw;
-  margin-left: -60px;
-  margin-bottom: 30px;
-  background-image: url("/assets/images/textures/pixel_weave.png");
-  background-color: $bluejade;
-  background-blend-mode: multiply;
-  padding: 15px 20vw 30px;
+  width: 60vw;
   font-family: Raleway, sans-serif;
-  box-shadow: 1px 1px 3px $transparent-black-med;
-
-  a { color: $white; }
-  a:hover { color: $gray80 !important; }
   h4 { margin-top: -15px; }
   .rightLink { margin-top: 0; }
 }
@@ -116,6 +115,12 @@ span.faded:hover {
    margin-top: -11px;
    box-shadow: 1px 1px 3px $transparent-black-med;
  }
+}
+
+.archive-item { margin-bottom: 60px; }
+//fix for strange misplacement on first archive item in list
+.archive-item:nth-child(1) {
+  margin-top: -12px;
 }
 
 .postImage {

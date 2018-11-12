@@ -1,0 +1,83 @@
+.contactForm {
+  position: relative;
+  left: 0;
+  width: 38vw;
+  height: 70vh;
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
+  font-size: 1.8em;
+  line-height: 7vh;
+  overflow: hidden;
+
+  input {
+    outline: none;
+    background-color: $transparent;
+    border: none;
+    border-bottom: solid 1px $white;
+    width: 65%;
+  }
+}
+
+.subject {
+  width: 80% !important;
+  padding-right: 70px;
+}
+
+.textCounter {
+  font-family: 'Raleway', 'Trebuchet', sans-serif;
+  font-size: 9pt;
+  color: $roarange;
+  position: absolute;
+  margin-left: -60px;
+}
+
+.phone {
+  white-space: nowrap;
+  input {
+    width: 50px;
+    text-align: center;
+  }
+}
+
+.contactRight {
+  position: absolute;
+  width: 45vw;
+  height: 80vh;
+  top: 60px;
+  right: 0;
+  margin-bottom: 60px;
+  border-left: solid 3px $white;
+  padding-left: 60px;
+}
+
+.submit {
+  margin: 15px 30px 15px 0;
+  font-size: 16pt;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $transparent;
+  border: solid 1px $bluejade;
+  transition: border 0.25s linear;
+  transition: color 0.25s linear;
+  padding: 10px 4vw;
+}
+
+.submit:hover {
+  a { color: $roarange;
+      text-decoration: none !important;
+      transition: color 0.25s linear;
+    }
+  border: solid 1px $roarange;
+  transition: color 0.25s linear;
+  transition: border 0.25s linear;
+}
+
+.reset {
+  background-color: $transparent;
+  border: none;
+  color: $white;
+  width: auto;
+}
+
+.reset:hover {
+  color: $roarange;
+}

@@ -1,36 +1,37 @@
 #nav {
-  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
   z-index: 10;
-  position: absolute;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  letter-spacing: 5pt;
+  z-index: 10;
   top: 0;
   width: 100%;
+  text-align: right;
 //  height: 60px;
-  background-color: $transparent-black-med;
-  padding: 5px 15px;
-  color: $gray10;
+  padding: 30px 5vw 0 0;
+  color: $black;
   vertical-align: middle;
-  font-size: 36px;
-  ul {
-    float: right;
-    margin-top: -8px;
-  }
-  ul li {
-    display: inline-block;
-    list-style-type: none;
-    padding: 0 15px;
-    font-size: 14px;
-    font-family: 'Raleway', sans-serif;
-  }
 }
 
 #wordmark {
+  font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
+  font-size: 36px;
+  letter-spacing: normal;
   padding: 0 10px 6px 30px;
   margin: 0 0 0 -15px;
   top: 0;
   a {
-    color: white !important;
+    color: $black !important;
     text-decoration: none;
   }
+}
+
+.navToggle {
+
+}
+
+.navMenu {
+
 }
 
 #wordmarkMiniBox {

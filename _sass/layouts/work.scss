@@ -3,18 +3,33 @@
 //@media screen and (max-width: 750px) { #gallery { column-count: 1; } }
 
 #gallery {
-  padding: 100px 15vw 0;
-  position: relative;
-//  column-gap: 50px;
   width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  background-image: url("/assets/images/textures/topography.png");
-  background-repeat: repeat;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding-bottom: 15px;
+}
+#gallery::-webkit-scrollbar-track {
+  background-color: $transparent-black-med;
+  padding: 5px 0;
+}
+#gallery::-webkit-scrollbar {
+  height: 8px;
+  margin-top: 15px;
+  width: 50vw;
+  padding: 0 100px;
+  opacity: 50%;
+}
+#gallery::-webkit-scrollbar-thumb {
+  background-color: $transparent-white-med;
+  mix-blend-mode: difference;
+  opacity: 50%;
 }
 
 #galleryWrapper {
-  margin-left: calc(8vw - 30px);
+//  margin-left: calc(8vw - 30px);
+  width: 150%;
+  height: 50vh;
+  margin-top: 5vh;
 }
 
 figure.galleryCard {
@@ -24,10 +39,8 @@ figure.galleryCard {
   display: inline-block;
   overflow: hidden;
   margin: 10px 1%;
-  min-width: 220px;
-  max-width: 310px;
-  max-height: 220px;
-  width: 100%;
+  width: 265px;
+  height: 48vh;
   color: #000000;
   text-align: center;
 }
@@ -39,9 +52,11 @@ figure.galleryCard * {
 }
 figure.galleryCard img {
   opacity: 1;
-  width: 100%;
+  background-size: cover;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
+  object-fit: cover;
+  height: 100%;
 }
 figure.galleryCard:after {
   background: #ffffff;
