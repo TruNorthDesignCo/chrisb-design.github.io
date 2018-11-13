@@ -117,10 +117,18 @@ span.faded:hover {
  }
 }
 
-.archive-item { margin-bottom: 60px; }
+.archive-item {
+  height: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 30px;
+//  border-bottom: solid 0.5px $gray20;
+  margin-bottom: 30px;
+}
 //fix for strange misplacement on first archive item in list
 .archive-item:nth-child(1) {
   margin-top: -12px;
+  height: 411px;
 }
 
 .postImage {

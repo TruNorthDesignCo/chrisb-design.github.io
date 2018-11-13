@@ -1,8 +1,7 @@
 .articleWrapper {
   background-image: url('/assets/images/textures/pixel_weave.png');
   background-repeat: repeat;
-  padding: 20vh 10vw 0;
-  height: 100%;
+  padding: 20vh 10vw;
   min-height: 100vh;
   margin-bottom: 5vh;
 }
@@ -10,12 +9,13 @@
 .article {
   background-color: $white;
   padding: 60px;
-  margin: 10px auto;
+  margin: 30px auto;
   width: 60vw;
   max-width: 960px;
   min-width: 380px;
   height: 100%;
   padding-bottom: 100px;
+  box-shadow: 3px 3px 2px $gray20;
   p {
     font-family: 'Raleway', sans-serif;
     text-indent: 2em;

@@ -11,6 +11,9 @@
   padding: 30px 5vw 0 0;
   color: $black;
   vertical-align: middle;
+  position: absolute;
+  a { color: $gray80; text-decoration: none; }
+  a:hover { color: $bluejade; }
 }
 
 #wordmark {
@@ -21,9 +24,11 @@
   margin: 0 0 0 -15px;
   top: 0;
   a {
-    color: $black !important;
+    color: $black;
     text-decoration: none;
   }
+
+  a:hover { color: $bluejade; }
 }
 
 .navToggle {

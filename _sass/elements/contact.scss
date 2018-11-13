@@ -57,7 +57,6 @@
   background-color: $transparent;
   border: solid 1px $bluejade;
   transition: border 0.25s linear;
-  transition: color 0.25s linear;
   padding: 10px 4vw;
 }
 
@@ -67,7 +66,6 @@
       transition: color 0.25s linear;
     }
   border: solid 1px $roarange;
-  transition: color 0.25s linear;
   transition: border 0.25s linear;
 }
 
