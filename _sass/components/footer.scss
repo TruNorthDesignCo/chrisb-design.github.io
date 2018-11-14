@@ -1,18 +1,18 @@
 //Section 4
-#section4 {
-  height: 100vh;
+#footer {
+  bottom: 0;
   margin-top: -5vh;
   padding-top: 2.5vh;
-//  min-height: 200px;
+  height: 250px;
   font-family: Raleway, sans-serif;
   background-image: url('/assets/images/textures/tweed.png');
   color: $white;
   box-shadow: -1px -1px 5px $gray80;
+  a { text-decoration: none; }
 
   h2 {
     color: $white;
     text-shadow: 1px 1px 1px $black;
-    margin-top: 25vh;
   }
 }
 
@@ -34,7 +34,6 @@
 
 .socialIcons {
   position: relative;
-  height: 8vw;
   vertical-align: middle;
   margin: 0 auto;
   width: 360px;
@@ -46,14 +45,14 @@
 //    width: 8vw;
 //    min-width: 30px;
 //    max-width: 45px;
-    margin: 10vh 2%;
+    margin: 2vh 2%;
   }
 
-  .icon img {
+  img {
     filter: grayscale(70%);
     transition: filter 0.25s ease-in;
   }
-  .icon img:hover {
+  img:hover {
     filter: grayscale(0%);
     transition: filter 0.25s ease-in;
   }

@@ -60,6 +60,30 @@ $(function() {
 });
 
 
+//about section flyout
+$('#aboutButton').click(function() {
+  $('.navbar').addClass('activeAbout');
+  $('.onepage-pagination').addClass('activeAboutDots');
+  $('.navTooltips').addClass('activeAboutTooltips');
+});
+$('.aboutClose').click(function() {
+  $('.navbar').removeClass('activeAbout');
+  $('.onepage-pagination').removeClass('activeAboutDots');
+  $('.navTooltips').removeClass('activeAboutTooltips');
+});
+
+// Collapse about section on outside click
+$('html').click(function() {
+  $('.navbar').removeClass('activeAbout');
+  $('.onepage-pagination').removeClass('activeAboutDots');
+  $('.navTooltips').removeClass('activeAboutTooltips');
+});
+//exceptions:
+$('.navbar').click(function(event) {
+  event.stopPropagation();
+});
+
+
 //form auto jump to next field
 $('.inputs').keyup(function () {
     if (this.value.length == this.maxLength) {

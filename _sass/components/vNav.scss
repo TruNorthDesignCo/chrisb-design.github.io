@@ -2,12 +2,43 @@
   z-index: 10;
   position: absolute;
   width: 50px;
-  transition: width 0.1s linear;
+  transition: width 0.5s ease-out;
   background-color: $transparent-black-med;
   transition: background-color 0.25s linear;
   height: 100vh;
   border-radius: 0;
+  .about { display: none; }
 }
+
+.about {
+  width: calc(80vw - 300px);
+  height: 70vh;
+  border-right: solid 0.5px $gray20;
+  margin: 15vh 0 30px 90px;
+  color: $white;
+  font-family: 'Raleway', 'Trebuchet', sans-serif;
+  font-size: 1.6em;
+  img {
+    height: 55vh;
+    max-height: 600px;
+    padding-bottom: 30px;
+  }
+  .hello {
+    font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
+    font-size: 3em;
+    vertical-align: bottom;
+    margin-left: 30px;
+  }
+  p { width: 50vw; }
+}
+
+.aboutClose {
+  position: absolute;
+  top: 50vh;
+  left: calc(80vw - 270px);
+  color: $bluejade;
+}
+.aboutClose:hover { color: $white; }
 
 .onepage-pagination:hover ~ .navbar, .navbar:hover {
   background-color: $transparent-black-dark;
@@ -17,9 +48,10 @@
 }
 
 .navHover {
-  margin-left: 170px !important;
+  margin-left: 170px;
   transition: margin-left 0.1s  ease-in;
 }
+.navTooltips .activeAboutTooltips .navHover { margin-left: 0 !important; }
 
 .dotstyle.dotstyle-fillup { height: 0; }
 
@@ -43,4 +75,20 @@
     margin: 17px 0;
     list-style-type: none;
   }
+}
+
+.activeAbout {
+  width: 80vw;
+  transition: width 0.5s ease-in;
+  background-color: $transparent-black-dark;
+  .about { display: block; }
+}
+.activeAboutDots {
+  left: calc(80vw - 50px) !important;
+  transition: left 0.5s ease-out;
+}
+.activeAboutTooltips {
+  left: calc(80vw - 200px) !important;
+  transition: left 0.5s ease-out;
+  margin-left: 0 !important;
 }
