@@ -38,17 +38,6 @@
   }
 }
 
-.contactRight {
-  position: absolute;
-  width: 45vw;
-  height: 80vh;
-  top: 60px;
-  right: 0;
-  margin-bottom: 60px;
-  border-left: solid 3px $white;
-  padding-left: 60px;
-}
-
 .submit {
   margin: 15px 30px 15px 0;
   font-size: 16pt;
@@ -78,4 +67,32 @@
 
 .reset:hover {
   color: $roarange;
+}
+
+.contactRight {
+  position: absolute;
+  width: 45vw;
+  height: 80vh;
+  top: 60px;
+  right: 0;
+  margin-bottom: 60px;
+  border-left: solid 3px $white;
+  padding-left: 5vw;
+  p {
+    margin-top: 30px;
+    font-size: 3.25vh;
+  }
+  .name {
+    font-family: 'Covered By Your Grace', 'Raleway', sans-serif;
+    font-size: 5vh;
+  }
+}
+
+#contactLogo {
+  margin: 0 auto;
+  height: 60vh;
+//  width: 100%; //This centers the logo
+  padding-right: 60px;
+  align-content: center;
+  object-fit: contain;
 }

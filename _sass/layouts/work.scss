@@ -39,10 +39,11 @@ figure.galleryCard {
   display: inline-block;
   overflow: hidden;
   margin: 10px 1%;
-  width: 265px;
+  width: 18vw;
   height: 48vh;
   color: #000000;
   text-align: center;
+  cursor: pointer;
 }
 figure.galleryCard * {
   -webkit-box-sizing: border-box;
@@ -56,15 +57,17 @@ figure.galleryCard img {
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
   object-fit: cover;
+  object-position: 50% 0;
   height: 100%;
+  width: 100%;
 }
 figure.galleryCard:after {
-  background: #ffffff;
+  background: $black;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 1px);
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   content: '';
   opacity: 0.75;
   -webkit-transform: skew(-45deg) scaleX(0);
@@ -86,6 +89,8 @@ figure.galleryCard p {
   margin: 0;
   width: 100%;
   opacity: 0;
+  color: $white;
+  text-shadow: 1px 1px 2px $gray80;
 }
 figure.galleryCard h4 {
   padding: 0 30px;

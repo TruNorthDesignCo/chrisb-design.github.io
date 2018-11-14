@@ -68,6 +68,12 @@
   font-size: 3em;
   box-shadow: 1px 1px 5px $transparent-black-med;
   text-shadow: 1px 1px 5px $transparent-black-light;
+  img {
+    height: 65%;
+    width: 85%;
+    object-fit: contain;
+    margin-top: -5px;
+  }
 }
 
 #wordmarkMiniBox:hover {
