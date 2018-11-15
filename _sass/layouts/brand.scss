@@ -36,8 +36,7 @@
   color: $white;
   background-color: $transparent;
   border: solid 1px $white;
-  transition: border 0.25s linear;
-  transition: color 0.25s linear;
+  transition: all 0.25s linear;
   padding: 10px 4vw;
 }
 
@@ -48,7 +47,6 @@
     }
 
   color: $roarange;
-  transition: color 0.25s linear;
+  transition: all 0.25s linear;
   border: solid 1px $roarange;
-  transition: border 0.25s linear;
 }

@@ -19,17 +19,18 @@
 	z-index: 11;
 	position: relative;
 	display: block;
-	margin: 30px 16px;
-	width: 10px;
-	height: 10px;
+	margin: 5px 0;
+	width: 44px; // this affects the size of the hitbox, not the element itself
+	height: 44px; // this affects the size of the hitbox, not the element itself
 	cursor: pointer;
 }
 
 .dotstyle li a {
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 10px; // this affects the size of the dot itself, not the size of the hitbox
+	height: 10px; // this affects the size of the dot itself, not the size of the hitbox
+	margin: 14px; // this centers the dot within the hitbox
 	outline: none;
 	border-radius: 50%;
 	background-color: #fff;

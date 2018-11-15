@@ -2,9 +2,8 @@
   z-index: 10;
   position: absolute;
   width: 50px;
-  transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out, background-color 0.25s linear;
   background-color: $transparent-black-med;
-  transition: background-color 0.25s linear;
   height: 100vh;
   border-radius: 0;
   .about { display: none; }
@@ -42,9 +41,8 @@
 
 .onepage-pagination:hover ~ .navbar, .navbar:hover {
   background-color: $transparent-black-dark;
-  transition: background-color 0.25s linear;
+  transition: all 0.25s linear;
 //  width: 200px;
-//  transition: width 0.1s ease-in;
 }
 
 .navHover {
@@ -71,24 +69,26 @@
   color: $white;
   text-transform: uppercase;
   text-shadow: 0 0 8px $black;
+  transition: margin-left 0.1s ease-out;
   li {
-    margin: 17px 0;
+    margin: 6px 0 26px 0;
     list-style-type: none;
   }
 }
 
 .activeAbout {
   width: 80vw;
-  transition: width 0.5s ease-in;
-  background-color: $transparent-black-dark;
+  transition: all 0.5s ease-in;
+  background-color: $gray90;
   .about { display: block; }
 }
+.activeAbout:hover { background-color: $gray90; }
 .activeAboutDots {
   left: calc(80vw - 50px) !important;
-  transition: left 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 .activeAboutTooltips {
   left: calc(80vw - 200px) !important;
-  transition: left 0.5s ease-out;
+  transition: all 0.5s ease-out;
   margin-left: 0 !important;
 }

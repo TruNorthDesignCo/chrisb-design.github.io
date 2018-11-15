@@ -45,17 +45,17 @@
   text-decoration: none;
   background-color: $transparent;
   border: solid 1px $bluejade;
-  transition: border 0.25s linear;
+  transition: all 0.25s linear;
   padding: 10px 4vw;
 }
 
 .submit:hover {
   a { color: $roarange;
       text-decoration: none !important;
-      transition: color 0.25s linear;
+      transition: all 0.25s linear;
     }
   border: solid 1px $roarange;
-  transition: border 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .reset {

@@ -73,8 +73,7 @@
 .faded {
   color: $gray50;
   border-color: $gray50 !important;
-  transition: color 0.5s linear;
-  transition: border-color 0.5s linear;
+  transition: all 0.5s linear;
 }
 span.faded:hover {
   background-color: $bluejade;

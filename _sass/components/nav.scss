@@ -82,7 +82,6 @@
   #wordmarkMini {
     height: 70px;
     background-color: $bluejade-dark;
-    transition: background-color 200ms;
-    transition: height 100ms;
+    transition: background-color 200ms, height 100ms;
   }
 }
