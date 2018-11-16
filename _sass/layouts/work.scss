@@ -46,15 +46,12 @@ figure.galleryCard {
   cursor: pointer;
 }
 figure.galleryCard * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
 figure.galleryCard img {
   opacity: 1;
   background-size: cover;
-  -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
   object-fit: cover;
   object-position: 50% 0;
@@ -70,9 +67,7 @@ figure.galleryCard:after {
   bottom: -1px;
   content: '';
   opacity: 0.75;
-  -webkit-transform: skew(-45deg) scaleX(0);
   transform: skew(-45deg) scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 figure.galleryCard figcaption {
@@ -80,7 +75,6 @@ figure.galleryCard figcaption {
   top: 50%;
   left: 0;
   width: 100%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 1;
 }
@@ -112,7 +106,6 @@ figure.galleryCard a {
 }
 figure.galleryCard:hover:after,
 figure.galleryCard.hover:after {
-  -webkit-transform: skew(-45deg) scaleX(1);
   transform: skew(-45deg) scaleX(1);
   transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -120,9 +113,7 @@ figure.galleryCard:hover figcaption h4,
 figure.galleryCard.hover figcaption h4,
 figure.galleryCard:hover figcaption p,
 figure.galleryCard.hover figcaption p {
-  -webkit-transform: translate3d(0%, 0%, 0);
   transform: translate3d(0%, 0%, 0);
-  -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
 figure.galleryCard:hover figcaption h4,
@@ -132,4 +123,37 @@ figure.galleryCard.hover figcaption h4 {
 figure.galleryCard:hover figcaption p,
 figure.galleryCard.hover figcaption p {
   opacity: 0.7;
+}
+
+.modal-dialog { width:70vw; }
+.modal-body { height: 70vh; }
+.modal-content {
+//  background-image: url('/assets/images/textures/tweed.png');
+//  background-repeat: repeat;
+  background-color: $gray80;
+  border: none;
+  border-radius: 0;
+}
+.modal-footer {
+  border-top: none;
+  p {
+    text-align: left;
+    color: $white;
+    font-family: 'Raleway', 'Trebuchet', sans-serif;
+  }
+  button {
+    background-color: $transparent;
+    border: solid 1px $white;
+    border-radius: 0;
+    font-family: 'Raleway', 'Trebuchet', sans-serif;
+    text-transform: uppercase;
+    color: $white;
+    transition: color 100ms linear, border 100ms linear;
+  }
+  button:hover {
+    background-color: $transparent;
+    color: $roarange;
+    border: solid 1px $roarange;
+    transition: color 100ms linear, border 100ms linear;
+  }
 }
