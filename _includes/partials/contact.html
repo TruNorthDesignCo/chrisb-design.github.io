@@ -1,23 +1,25 @@
-<form id="contact" onsubmit="return false">
-  <p class="contactForm">
-    Hi Chris,<br />
-    I have a question about<br />
-    <input type="text" name="subject" class="subject" maxlength="102" required</input>. <span class="textCounter"></span><br />
-    Give me a call at
-    <span class="phone">
-      (<input type="text" class="inputs" name="area" placeholder="000" autocomplete="tel-national" maxlength="3" required></input>)
-      <input type="text" class="inputs" name="local" placeholder="123" autocomplete="tel-national" maxlength="3" required></input>-
-      <input type="text" class="inputs" name="number" placeholder="4567" autocomplete="tel-national" maxlength="4" required></input>,
-    </span><br />
-    or email me at <input type="email" name="email" placeholder="Dilbert@Path-E-TechMgmt.net" autocomplete="email" required></input>.<br />
-    <br />
-    Thanks,<br />
-    <input type="text" name="name" placeholder="Dilbert (Path-E-Tech Management)" autocomplete="name" required></input><br />
-  </p>
+<div class="desktopContact">
+  <form id="contact" onsubmit="return false">
+    <p class="contactForm">
+      Hi Chris,<br />
+      I have a question about<br />
+      <input type="text" name="subject" class="subject" maxlength="102" required</input>. <span class="textCounter"></span><br />
+      Give me a call at
+      <span class="phone">
+        (<input type="text" class="inputs" name="area" placeholder="000" autocomplete="tel-national" maxlength="3" required></input>)
+        <input type="text" class="inputs" name="local" placeholder="123" autocomplete="tel-national" maxlength="3" required></input>-
+        <input type="text" class="inputs" name="number" placeholder="4567" autocomplete="tel-national" maxlength="4" required></input>,
+      </span><br />
+      or email me at <input type="email" name="email" placeholder="Dilbert@Path-E-TechMgmt.net" autocomplete="email" required></input>.<br />
+      <br />
+      Thanks,<br />
+      <input type="text" name="name" placeholder="Dilbert (Path-E-Tech Management)" autocomplete="name" required></input><br />
+    </p>
 
-  <a><button type="submit" class="submit">Submit</button></a>
-  <button type="reset" class="reset">or start over &nbsp;<i class="fas fa-undo"></i></button>
-</form>
+    <a><button type="submit" class="submit">Submit</button></a>
+    <button type="reset" class="reset">or start over &nbsp;<i class="fas fa-undo"></i></button>
+  </form>
+</div>
 
 <div class="contactRight">
   <img id="contactLogo" src="/assets/images/logo/barefoot_inv.png">
@@ -27,4 +29,12 @@
     <span class="name">Chris Barfuss,</span> <span class="nobreak">Barefoot Creative</span><br />
     (208) 312-5083 &nbsp; | &nbsp; chrisbarfuss@live.com
   </p>
+</div>
+
+<div class="mobileContact">
+  <a data-toggle="modal" data-target="#mobileContact">
+    <button class="showContact">
+      Let's Chat
+    </button>
+  </a>
 </div>

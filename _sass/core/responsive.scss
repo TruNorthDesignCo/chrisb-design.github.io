@@ -9,42 +9,80 @@
   #archives { column-count: 2; }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .heroVariable { margin-left: 30vw; }
   #hero .carousel-inner .item img { height: 100vh; }
   .blogBlockText { font-size: 7em; }
+  .desktopContact { display: block; }
+  .mobileContact { display: none; }
 }
 
-@media screen and (max-width: 700px) {
-  // Section 0
-  .heroVariable { margin-left: 32vw; }
+@media screen and (max-width: 900px) {
+  .section2, .section3, .section4 {
+    background-image: url('/assets/images/textures/connectwork.png');
+    background-repeat: repeat;
+    padding: 30px 30px 30px 60px;
+  }
 
   // Section 1
-  .portrait { margin: 10vh 35vw 5vh; }
-  .bio { margin: 0 10vw; text-align: center; }
+  .heroVariable { margin-left: 32vw; }
 
-  // Section 3
-  #blogBlock {
-    width: 90vw;
-    height: 35vh;
-    margin-right: -4.5vw;
-    padding-right: 4.5vw;
-    padding-top: 10vh;
-  }
-
-  .blogBlockText {
-    width: 90%;
-    max-width: 90%;
-    font-size: 4em;
-  }
-
-  #section3 h4 {
-    width: 90vw;
-    margin-top: calc(35vh + 30px);
-    text-align: left;
+  // Section 2
+  .workCopy {
+    margin: 0 0 0 15px;
+    width: 100%;
+    padding: 0;
     font-size: 16pt;
   }
-  #section3 .tagsContainer { width: 80vw; }
+  #gallery { padding-top: 30px !important; }
+  #galleryWrapper { width: 300%; }
+  .galleryCard { width: 38vw !important; }
+  .galleryCard h4 { font-size: 13pt; }
+
+  // Section 3
+  .brandCopy {
+    width: 80vw;
+    padding: 30px 0 0 15px;
+    font-size: 16pt;
+    bottom: auto;
+  }
+
+  .brandsGrid {
+    right: 30px;
+    width: 80vw;
+    height: 65vh;
+    bottom: 15px;
+    top: auto;
+    td { height:  12vh; width: auto; }
+  }
+
+  // Section 4
+  .contactRight {
+    width: 95vw;
+    height:40vh;
+    border-left: none;
+    padding-left: 0;
+  }
+  #contactLogo {
+    height: 30vh;
+    width: 100vw;
+    margin: 0 auto;
+  }
+  .contactRight p {
+    width: 90vw;
+    margin: 30px;
+    text-align: center;
+  }
+  #contact {
+    margin-top: 5vh;
+    width: 80vw;
+    .contactForm {
+      width: 80vw;
+      margin-left: 15px;
+    }
+  }
+  .desktopContact { display: none; }
+  .mobileContact { display: block; }
 }
 
 @media screen and (max-width: 520px) {

@@ -43,19 +43,20 @@ $(document).ready(function(){
 $(function() {
   $('.navbar').hover(function() {
 //    $('.dotstyle li').addClass('navHover');
-    $('.navTooltips').addClass('navHover');
+    $('#navTooltips').addClass('navHover');
   }, function() {
     // on mouseout, reset the background colour
 //    $('.dotstyle li').removeClass('navHover');
-    $('.navTooltips').removeClass('navHover');
+    $('#navTooltips').removeClass('navHover');
   });
 });
 $(function() {
   $('.onepage-pagination').hover(function() {
 //    $('.dotstyle li').addClass('navHover');
-    $('.navTooltips').addClass('navHover');
+    $('#navTooltips').addClass('navHover');
   }, function() {
 //    $('.dotstyle li').addClass('navHover');
+    $('#navTooltips').removeClass('navHover');
   });
 });
 
@@ -64,19 +65,20 @@ $(function() {
 $('#aboutButton').click(function() {
   $('.navbar').addClass('activeAbout');
   $('.onepage-pagination').addClass('activeAboutDots');
-  $('.navTooltips').addClass('activeAboutTooltips');
+  $('#navTooltips').addClass('activeAboutTooltips');
 });
 $('.aboutClose').click(function() {
   $('.navbar').removeClass('activeAbout');
-  $('.onepage-pagination').removeClass('activeAboutDots');
-  $('.navTooltips').removeClass('activeAboutTooltips');
+  $('a.onepage-pagination').removeClass('activeAboutDots');
+  $('#navTooltips').removeClass('activeAboutTooltips');
 });
 
 // Collapse about section on outside click
 $('html').click(function() {
   $('.navbar').removeClass('activeAbout');
   $('.onepage-pagination').removeClass('activeAboutDots');
-  $('.navTooltips').removeClass('activeAboutTooltips');
+  $('#navTooltips').removeClass('activeAboutTooltips');
+//  $('#navTooltips').removeClass('navHover');
 });
 //exceptions:
 $('.navbar').click(function(event) {
@@ -94,13 +96,30 @@ $('.inputs').keyup(function () {
 
 //character counter for subject text input
 $('.subject').keyup(function(){
-
     if(this.value.length > $(this).attr('maxlength')){
         return false;
     }
     $(this).next().html("(" +($(this).attr('maxlength') - this.value.length) +"/102)");
-
 });
+
+$('.reset').click(function() {
+  $('.textCounter').html("(102/102)");
+});
+
+
+// Contact Form Confirmation
+$("#contact").on("submit", function(e){
+//	event.preventDefault();
+  $('#contact_confirm').modal('toggle')
+});
+
+// Close All Other Modals Upon Opening
+$('#contact_confirm').on('show.bs.modal', function () {
+    $('.modal').not($(this)).each(function () {
+        $(this).modal('hide');
+    });
+});
+
 
 //Tags Column fly out
 document.querySelector('.filterButton')

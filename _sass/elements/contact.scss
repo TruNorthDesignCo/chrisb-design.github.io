@@ -27,7 +27,7 @@
   font-size: 9pt;
   color: $roarange;
   position: absolute;
-  margin-left: -60px;
+  margin-left: -70px;
 }
 
 .phone {
@@ -79,7 +79,7 @@
   border-left: solid 3px $white;
   padding-left: 5vw;
   p {
-    margin-top: 30px;
+    margin: 30px 0 !important;
     font-size: 3.25vh;
   }
   .name {
@@ -95,4 +95,59 @@
   padding-right: 60px;
   align-content: center;
   object-fit: contain;
+}
+
+.showContact {
+  position: absolute;
+  width: 40vw;
+  height: 10vh;
+  margin: 65vh 30vw 0 20vw;
+  background-color: $transparent;
+  border: solid 2px $bluejade;
+  text-transform: uppercase;
+  font-size: 5vw;
+  transition: all 0.25s linear;
+}
+
+.showContact:hover {
+  transition: all 0.25s linear;
+  border: solid 2px $roarange;
+}
+
+#mobileContact {
+  .modal-content { width: 97vw; }
+  .modal-body {
+    top: 0;
+    left: 0;
+    height: 85vh;
+    color: $white;
+  }
+}
+
+#contact_confirm {
+  color: $white;
+  font-size: 1.5em;
+  font-family: 'Raleway', 'Trebuchet', sans-serif;
+  .modal-content {
+    width: 30vw;
+    height: 30vh;
+    margin: 10vw auto;
+  }
+  button {
+    margin-top: 7vh;
+    position: absolute;
+    right: 15px;
+    background-color: $transparent;
+    border: solid 1px $bluejade;
+    color: $bluejade;
+    font-family: 'Raleway', 'Trebuchet', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.1s linear;
+  }
+  button:hover {
+    background-color: $transparent;
+    border: solid 1px $roarange;
+    color: $roarange;
+    transition: all 0.1s linear;
+  }
 }

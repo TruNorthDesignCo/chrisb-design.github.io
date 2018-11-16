@@ -2,6 +2,12 @@
 //@media screen and (max-width: 1080px) { #gallery { column-count: 2; } }
 //@media screen and (max-width: 750px) { #gallery { column-count: 1; } }
 
+.workCopy {
+  width: 70vw;
+  padding: 0 10vw 0 10vw;
+  font-size: 1.7em;
+}
+
 #gallery {
   width: 100%;
   overflow-y: hidden;

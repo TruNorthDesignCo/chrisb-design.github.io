@@ -9,14 +9,16 @@
   .about { display: none; }
 }
 
+#navTooltips .activeAboutTooltips .navHover { margin-left: 0 !important; }
+
 .about {
   width: calc(80vw - 300px);
-  height: 70vh;
+  height: 90vh;
   border-right: solid 0.5px $gray20;
-  margin: 15vh 0 30px 90px;
+  margin: 5vh 0 30px 90px;
   color: $white;
   font-family: 'Raleway', 'Trebuchet', sans-serif;
-  font-size: 1.6em;
+  font-size: calc(1vh + 1.1vw);
   img {
     height: 55vh;
     max-height: 600px;
@@ -45,12 +47,6 @@
 //  width: 200px;
 }
 
-.navHover {
-  margin-left: 170px;
-  transition: margin-left 0.1s  ease-in;
-}
-.navTooltips .activeAboutTooltips .navHover { margin-left: 0 !important; }
-
 .dotstyle.dotstyle-fillup { height: 0; }
 
 .invisible { border: none; }
@@ -58,11 +54,11 @@
 .secondary a { background-color: $white !important; }
 .secondary a:hover { background-color: $transparent-white-med !important; }
 
-.navTooltips {
+#navTooltips {
   position: absolute;
   pointer-events: none;
   top: 31%;
-  left: -150px;
+  left: -120px;
   font-family: 'Raleway', 'Trebuchet', sans-serif;
   font-size: 1.2em;
   text-align: left;
@@ -70,19 +66,24 @@
   text-transform: uppercase;
   text-shadow: 0 0 8px $black;
   transition: margin-left 0.1s ease-out;
+  ul { padding-left: 15px; }
   li {
     margin: 6px 0 26px 0;
     list-style-type: none;
   }
 }
 
+.navHover {
+  margin-left: 170px;
+  transition: margin-left 0.1s ease-in;
+}
+
 .activeAbout {
   width: 80vw;
   transition: all 0.5s ease-in;
-  background-color: $gray90;
+  background-color: $gray90 !important;
   .about { display: block; }
 }
-.activeAbout:hover { background-color: $gray90; }
 .activeAboutDots {
   left: calc(80vw - 50px) !important;
   transition: all 0.5s ease-out;
@@ -91,4 +92,31 @@
   left: calc(80vw - 200px) !important;
   transition: all 0.5s ease-out;
   margin-left: 0 !important;
+}
+
+.secondary {
+  height: 10px !important;
+  width: 10px !important;
+  background-color: $white;
+  border: solid 2px $white;
+  border-radius: 50%;
+  margin: 18px 0 40px 14px !important;
+  transition: all 0.25s linear;
+}
+.secondary:hover {
+  background-color: $transparent-white-med;
+  transition: all 0.25s linear;
+}
+
+.secondary a {
+  background-color: $transparent !important;
+  border-radius: 0 !important;
+  margin: -18px 0 0 -18px !important; //imp
+  padding: 14px;
+  height: 44px !important; //important
+  width: 44px !important; //important
+  box-shadow: none !important; //!important
+}
+.secondary a:hover {
+  background-color: $transparent !important;
 }
