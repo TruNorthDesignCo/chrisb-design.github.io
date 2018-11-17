@@ -1,0 +1,44 @@
+<!-- mobileContact -->
+<div class="modal fade" id="mobileContact" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body sanscopy_sm">
+        <form id="contact" onsubmit="return false">
+          <p class="contactForm">
+            Hi Chris,<br />
+            I have a question about<br />
+            <input type="text" name="subject" class="subject" maxlength="102" required</input>. <span class="textCounter"></span><br />
+            Give me a call at
+            <span class="phone">
+              (<input type="text" class="inputs" name="area" placeholder="000" autocomplete="tel-national" maxlength="3" required></input>)
+              <input type="text" class="inputs" name="local" placeholder="123" autocomplete="tel-national" maxlength="3" required></input>-
+              <input type="text" class="inputs" name="number" placeholder="4567" autocomplete="tel-national" maxlength="4" required></input>,
+            </span><br />
+            or email me at <input type="email" name="email" placeholder="Dilbert@Path-E-TechMgmt.net" autocomplete="email" required></input>.<br />
+            <br />
+            Thanks,<br />
+            <input type="text" name="name" placeholder="Dilbert (Path-E-Tech Management)" autocomplete="name" required></input><br />
+          </p>
+
+          <a><button type="submit" class="submit">Submit</button></a>
+          <button type="reset" class="reset">or start over &nbsp;<i class="fas fa-undo"></i></button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Confirmation Modal -->
+<div class="modal fade" id="contact_confirm" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        Thanks for reaching out! I'll get back to you ASAP.
+        <br /><button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
