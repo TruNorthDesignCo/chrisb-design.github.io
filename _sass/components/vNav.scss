@@ -11,6 +11,11 @@
 
 #navTooltips .activeAboutTooltips .navHover { margin-left: 0 !important; }
 
+.tooltipClick {
+  li:not(.secondary) { width: 195px !important; }
+  .secondary a { width: 195px !important; }
+}
+
 .about {
   width: calc(80vw - 300px);
   height: 90vh;
@@ -44,7 +49,7 @@
 .onepage-pagination:hover ~ .navbar, .navbar:hover {
   background-color: $transparent-black-dark;
   transition: all 0.25s linear;
-//  width: 200px;
+  width: 200px;
 }
 
 .dotstyle.dotstyle-fillup { height: 0; }
@@ -79,17 +84,19 @@
 }
 
 .activeAbout {
-  width: 80vw;
+  width: 80vw !important;
   transition: all 0.5s ease-in;
   background-color: $gray90 !important;
   .about { display: block; }
 }
 .activeAboutDots {
-  left: calc(80vw - 50px) !important;
+  left: calc(80vw - 200px) !important;
   transition: all 0.5s ease-out;
+  li:not(.secondary) { width: 150px !important; }
+  .secondary a { width: 140px !important; }
 }
 .activeAboutTooltips {
-  left: calc(80vw - 200px) !important;
+  left: calc(80vw - 150px) !important;
   transition: all 0.5s ease-out;
   margin-left: 0 !important;
 }

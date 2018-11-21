@@ -26,13 +26,16 @@
 }
 
 .brandJoin {
-  height: 15vh;
-  width: 150px;
+  display:block;
+  height: 10vh;
+  width: 10vw;
   text-align: center;
-  font-size: 2em;
-  padding: 2vh;
-  border: solid 1px $white;
+  font-size: calc(0.5vh + 0.7vw);
+  padding: 2.5vh 10%;
+  border: solid 1px $bluejade;
+  color: $bluejade;
   text-transform: uppercase;
+  margin: 0 auto;
 }
 
 .contactButton {
