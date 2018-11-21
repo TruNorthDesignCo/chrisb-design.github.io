@@ -44,19 +44,23 @@ $(function() {
   $('.navbar').hover(function() {
 //    $('.dotstyle li').addClass('navHover');
     $('#navTooltips').addClass('navHover');
+    $('.onepage-pagination').addClass('tooltipClick');
   }, function() {
     // on mouseout, reset the background colour
 //    $('.dotstyle li').removeClass('navHover');
     $('#navTooltips').removeClass('navHover');
+    $('.onepage-pagination').removeClass('tooltipClick');
   });
 });
 $(function() {
   $('.onepage-pagination').hover(function() {
 //    $('.dotstyle li').addClass('navHover');
     $('#navTooltips').addClass('navHover');
+    $('.onepage-pagination').addClass('tooltipClick');
   }, function() {
 //    $('.dotstyle li').addClass('navHover');
     $('#navTooltips').removeClass('navHover');
+    $('.onepage-pagination').removeClass('tooltipClick');
   });
 });
 
@@ -69,7 +73,7 @@ $('#aboutButton').click(function() {
 });
 $('.aboutClose').click(function() {
   $('.navbar').removeClass('activeAbout');
-  $('a.onepage-pagination').removeClass('activeAboutDots');
+  $('.onepage-pagination').removeClass('activeAboutDots');
   $('#navTooltips').removeClass('activeAboutTooltips');
 });
 
@@ -107,10 +111,16 @@ $('.reset').click(function() {
 });
 
 
-// Contact Form Confirmation
+// Contact Form Confirmation (desktop)
 $("#contact").on("submit", function(e){
 //	event.preventDefault();
-  $('#contact_confirm').modal('toggle')
+  $('#contact_confirm').modal('toggle');
+});
+
+// Contact Form Confirmation (mobile)
+$("#mobileContact").on("submit", function(e){
+//	event.preventDefault();
+  $('#contact_confirm').modal('toggle');
 });
 
 // Close All Other Modals Upon Opening

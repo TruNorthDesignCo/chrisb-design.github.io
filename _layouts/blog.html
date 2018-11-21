@@ -57,32 +57,7 @@
     </div>
 
 <!-- Most Recent Post -->
-    <div id="recent">
-      <h3>Most Recent Post:</h3>
-      {% for post in site.posts limit:1  %}
-        {% if forloop.last %}
-          <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
-          <p>
-            Published: <strong>{{ post.date | date: '%B %d, %Y' }}</strong><br />
-            Tags:
-              <span class="tags inline">
-                {{ post.tags[0] }}
-              </span>
-              <span class="tags inline">
-                {{ post.tags[1] }}
-              </span>
-              <span class="tags inline">
-                {{ post.tags[2] }}
-              </span>
-            <br />
-            {{ post.excerpt }}
-            <!-- <br />
-            <a href="{{ post.url | prepend: site.baseurl }}" class="rightLink"><i class="fas fa-long-arrow-alt-right"></i>&nbsp; Read This</a> -->
-          </p>
-        {% endif %}
-      {% endfor %}
-      </div>
-      <hr width="80%">
+    {% include partials/recent.html %} <!-- currently disabled in the partial -->
 
 <!-- All Posts -->
     <div id="archives">

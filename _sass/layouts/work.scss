@@ -140,6 +140,18 @@ figure.galleryCard.hover figcaption p {
   border: none;
   border-radius: 0;
 }
+
+.modal-scroll {
+  height: 68vh;
+  overflow-y: scroll;
+  img {
+    max-width: 80%;
+    max-height: 50vh;
+    object-fit: contain;
+    margin: 30px;
+  }
+}
+
 .modal-footer {
   border-top: none;
   p {

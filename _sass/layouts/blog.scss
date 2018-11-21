@@ -90,19 +90,22 @@ span.faded:hover {
   background-color: $transparent !important;
 }
 
+/*
 #recent {
   width: 60vw;
   font-family: Raleway, sans-serif;
   h4 { margin-top: -15px; }
   .rightLink { margin-top: 0; }
 }
+*/
 
 #archives {
   column-count: 3;
   column-fill: balance;
   column-gap: 2em;
- .archive-group, .archive-item { break-inside: avoid-column;}
- margin-top: 15px;
+  .archive-group, .archive-item { break-inside: avoid-column;}
+  // margin-top: 15px; // Use this when Most Recent Post is included
+  margin-top: 60px; // Use this when Most Recent Post is NOT included
 
  h3 {
    width: 100%;
@@ -117,7 +120,7 @@ span.faded:hover {
 }
 
 .archive-item {
-  height: 400px;
+//  height: 400px;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-bottom: 30px;
@@ -127,7 +130,7 @@ span.faded:hover {
 //fix for strange misplacement on first archive item in list
 .archive-item:nth-child(1) {
   margin-top: -12px;
-  height: 411px;
+//  height: 411px;
 }
 
 .postImage {
