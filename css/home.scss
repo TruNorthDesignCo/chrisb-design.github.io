@@ -17,8 +17,6 @@
 //layouts
 @import "layouts/homepage";
 @import "layouts/blog";
-@import "layouts/work";
-@import "layouts/brand";
 @import "layouts/toolkit";
 @import "layouts/post";
 
@@ -27,15 +25,15 @@
 @import "components/vNav";
 @import "components/footer";
 
-//elements
+//onePage scrolling
 @import "onePageScroll/component";
 @import "onePageScroll/onepage-scroll";
+
+//elements
 @import "elements/hero";
+@import "elements/work";
+@import "elements/brand";
 @import "elements/contact";
-@import "elements/scrollDown";
-@import "elements/photoBanner";
-@import "elements/headWrapper";
 
-//components
-
+//viewport sizing
 @import "core/responsive";
