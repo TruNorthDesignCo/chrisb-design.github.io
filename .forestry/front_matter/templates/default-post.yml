@@ -34,3 +34,5 @@ fields:
 - type: textarea
   name: excerpt
   label: Excerpt
+pages:
+- _posts/criticism-the-key-to-designer-success.html
