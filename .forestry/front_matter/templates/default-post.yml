@@ -1,0 +1,38 @@
+---
+label: Default Post
+hide_body: false
+is_partial: false
+fields:
+- type: text
+  label: Layout
+  name: layout
+  default: post
+  description: Though gallery items may be included later, at this time it should
+    always be 'post'.
+- type: text
+  label: Title
+  name: title
+- type: tag_list
+  label: Tags
+  name: tags
+  description: Common tags include 'design', 'marketing', 'typography', etc. Use 'em
+    like keywords in the post.
+- type: datetime
+  label: Date
+  name: date
+  config:
+    required: true
+  description: Pick a date and time of publication and the format will take care of
+    itself.
+- type: text
+  name: category
+  label: Category
+  default: posts
+  description: This should always be 'posts'.
+  config:
+    required: true
+- type: textarea
+  name: excerpt
+  label: Excerpt
+pages:
+- _posts/2018-12-07-criticism-the-key-to-designer-success.html
