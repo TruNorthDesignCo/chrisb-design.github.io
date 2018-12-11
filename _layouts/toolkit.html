@@ -23,7 +23,7 @@
 <body>
   <div id="wordmarkMiniBox">
     <div id="wordmarkMini">
-      <span><img src="/assets/images/logo/barefoot_thick_inv.png"></span>
+      <span><img src="/assets/images/logo/barefoot_icon_inv.svg"></span>
     </div>
   </div>
 
@@ -37,10 +37,56 @@
 
 <div class="contentWrapper">
   <div class="contentFrame">
+
+    <div class="toolFilter">
+      Filter:
+      <ul>
+        <li class="toolFilterIcon active" id="toolAll">
+          <i class="fas fa-low-vision"></i>
+          <span class="filterTooltip">Show All</span>
+        </li>
+        <li class="toolFilterIcon inactive" id="toolDesign">
+          <i class="fas fa-draw-polygon"></i>
+          <span class="filterTooltip">Graphic Design</span>
+        </li>
+        <li class="toolFilterIcon inactive" id="toolWeb">
+          <i class="fas fa-code"></i>
+          <span class="filterTooltip">Web Design</span>
+        </li>
+        <li class="toolFilterIcon inactive" id="toolStock">
+          <i class="fas fa-images"></i>
+          <span class="filterTooltip">Stock Assets</span>
+        </li>
+        <li class="toolFilterIcon inactive" id="toolMarketing">
+          <i class="fas fa-chart-line"></i>
+          <span class="filterTooltip">Marketing</span>
+        </li>
+        <li class="toolFilterIcon inactive" id="toolDnD">
+          <i class="fab fa-d-and-d"></i>
+          <span class="filterTooltip">Dungeons &amp; Dragons</span>
+        </li>
+<!--
+        <li class="toolFilterIcon inactive" id="toolGames">
+          <i class="fas fa-gamepad"></i>
+          <span class="filterTooltip">Video Games</span>
+        </li>
+-->
+        <li class="toolFilterIcon inactive" id="toolDraw">
+          <i class="fas fa-pencil-alt"></i>
+          <span class="filterTooltip">Drawing</span>
+        </li>
+        <li class="toolFilterIcon inactive" id="toolFood">
+          <i class="fas fa-utensils"></i>
+          <span class="filterTooltip">Cooking</span>
+        </li>
+        <li>&nbsp;<!--this fixes a display issue with the tooltips--></li>
+      </ul>
+    </div>
+
 <!-- Stock Assets -->
   <div class="resourceBox">
     <a id="resourceBox">
-    <table class="resourcePanel">
+    <table class="resourcePanel tagDesign tagStock">
       <th colspan="2"><h3>Stock Assets</h3></th>
       <tr>
         <td><a href="https://www.pexels.com" target="blank">Pexels</a></td>
@@ -57,7 +103,7 @@
     </table>
 
 <!-- Typographic Assets -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagDesign tagWeb tagStock">
       <th colspan="2"><h3>Typographic Assets</h3></th>
       <tr>
         <td><a href="https://fonts.google.com/" target="blank">Google Fonts</a></td>
@@ -86,7 +132,7 @@
     </table>
 
 <!--  Social Media Marketing -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagWeb tagMarketing">
       <th colspan="2"><h3>Social Media Marketing</h3></th>
       <tr>
         <td>Hootsuite</td>
@@ -103,7 +149,7 @@
     </table>
 
 <!--  SEO -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagWeb tagMarketing">
       <th colspan="2"><h3>Search Engine Optimization (SEO)</h3></th>
       <tr>
         <td><a href="https://www.seoprofiler.com" target="blank">SEO Profiler</a></td>
@@ -136,7 +182,7 @@
     </table>
 
 <!-- Graphic Designer Toolkit -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagDesign">
       <th colspan="2"><h3>Graphic Designer Toolkit</h3></th>
       <tr>
         <td>Title</td>
@@ -145,7 +191,7 @@
     </table>
 
 <!-- Web Designer Toolkit -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagWeb">
       <th colspan="2"><h3>Web Designer Toolkit</h3></th>
       <tr>
         <td><a href="https://atom.io/" target="blank">Atom Text Editor</a></td>
@@ -190,7 +236,7 @@
     </table>
 
 <!-- Code Snippets & Repos -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagWeb">
       <th colspan="2"><h3>Code Snippets &amp; Repos</h3></th>
       <tr>
         <td><a href="https://fontawesome.com/" target="blank">FontAwesome</a></td>
@@ -235,7 +281,7 @@
     </table>
 
 <!--  Web Dev Environments -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagWeb">
       <th colspan="2"><h3>Web Dev Environments</h3></th>
       <tr>
         <td><a href="https://www.ruby-lang.org/en/" target="blank">Ruby</a></td>
@@ -268,7 +314,7 @@
     </table>
 
 <!-- Color Tools -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagDesign tagWeb tagDraw">
       <th colspan="2"><h3>Color Tools</h3></th>
       <tr>
         <td><a href="http://www.colourlovers.com/palettes" target="blank">Colourlovers</td>
@@ -297,7 +343,7 @@
     </table>
 
 <!-- Learning Resources -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagDesign tagWeb">
       <th colspan="2"><h3>Learning Resources</h3></th>
       <tr>
         <td><a href="https://www.codecademy.com/" target="blank">CodeAcademy</a></td>
@@ -314,29 +360,56 @@
     </table>
 
 <!-- D&D Stuff -->
-    <table class="resourcePanel">
-      <th colspan="2"><h3>Dungeons &amp; Dragons</h3></th>
+    <table class="resourcePanel tagDnD">
+      <th colspan="2"><h3>D&amp;D Player Resources</h3></th>
       <tr>
-
         <td><a href="http://www.dndbeyond.com" target="blank">D&amp;D Beyond</a></td>
         <td>A character creator and virtual character sheet</td>
       </tr>
+      <tr>
+        <td><a href="https://drive.google.com/open?id=1vtxWXkVnwAZDfCVXrQDxYUbuperCPDYG" target="blank">Homebrew Content</a></td>
+        <td>Some subclasses, backstories, feats, and spells that I've created or stolen</td>
+      </tr>
+    </table>
+
+    <table class="resourcePanel tagDnD">
+      <th colspan="2"><h3>DM Tools</h3></th>
       <tr>
         <td><a href="http://tools.goblinist.com/5enc/" target="blank">Goblinist</a></td>
         <td>Random Encounter Generator</td>
       </tr>
       <tr>
-        <td><a href="http://www.hexographer.com/" target="blank">Hexographer</a></td>
-        <td>A world map generator using a hex grid</td>
+        <td><a href="https://inkarnate.com" target="blank">Inkarnate</a></td>
+        <td>A simple world map generator that looks great for players</td>
       </tr>
+      <tr>
+        <td><a href="http://www.hexographer.com/" target="blank">Hexographer</a></td>
+        <td>A world map generator using a hex grid, better for travel stuff</td>
+      </tr>
+      <tr>
+        <td><a href="https://store.steampowered.com/app/592260/Dungeon_Painter_Studio/" target="blank">Dungeon Painter Studio</a></td>
+        <td>Pretty much the only good options for making battle maps, though it's not free.</td>
+      </tr>
+    </table>
+
+    <table class="resourcePanel tagDnD">
+      <th colspan="2"><h3>3D Printed Gaming</h3></th>
       <tr>
         <td><a href="http://www.desktophero3d.com" target="blank">Desktop Hero 3D</a></td>
         <td>Open-source character mini creator/model generator</td>
       </tr>
+      <tr>
+        <td><a href="https://www.shapeways.com/designer/mz4250/creations" target="blank">The DM Workshop</a></td>
+        <td>This guy made hundreds of minis and is giving away all of the files for free.</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.thingiverse.com/devonjones/collections/page:1" target="blank">OpenForge</a></td>
+        <td>These guys made a ton of battle map resources, also free to download and print.</td>
+      </tr>
     </table>
 
 <!-- Cooking -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagFood">
       <th colspan="2"><h3>Cooking &amp; Recipe Resources</h3></th>
       <tr>
         <td><a href="http://www.seriouseats.com" target="blank">Serious Eats</a></td>
@@ -353,7 +426,7 @@
     </table>
 
 <!-- Drawing -->
-    <table class="resourcePanel">
+    <table class="resourcePanel tagDraw">
       <th colspan="2"><h3>Drawing &amp; Art Resources</h3></th>
       <tr>
         <td><a href="https://line-of-action.com" target="blank">Line of Action</a></td>
@@ -369,32 +442,6 @@
 </div>
 </div>
 
-<div id="footer" align="center">
-<!--    <div class="footerLeft"> -->
-  <h2>Let's Chat.</h2>
-  <p><a href="mailto:chrisbarfuss@live.com">chrisbarfuss@live.com</a>&nbsp; | &nbsp;
-  <a href="tel:12083125083">208.312.5083</a></p>
-<!--    </div> -->
+{% include partials/footer.html %}
 
-<!--    <div class="footerRight"> -->
-  <div class="socialIcons" align="center">
-    <a href="https://www.facebook.com/chrisbarfuss22"><!--<img src="/assets/images/ui/social/round_shade/facebook-Icon.png"></a> -->
-    <a href="https://www.facebook.com/chrisbarfuss22"><img src="/assets/images/ui/social/long_shadow/Facebook.png"></a>
-    <a href="https://twitter.com/_thatdesignguy"><!--<img src="/assets/images/ui/social/round_shade/Twitter-Icon.png"></a> -->
-    <a href="https://twitter.com/_thatdesignguy"><img src="/assets/images/ui/social/long_shadow/Twitter.png"></a>
-    <a href="https://www.linkedin.com/in/chris-barfuss-14541267/"><!--<img src="/assets/images/ui/social/round_shade/Linkedin.png"></a> -->
-    <a href="https://www.linkedin.com/in/chris-barfuss-14541267/"><img src="/assets/images/ui/social/long_shadow/Linkedin.png"></a>
-    <span>
-      <a href="https://www.instagram.com/_thatdesignguy/"><!--<img src="/assets/images/ui/social/round_shade/Instagram-Icon.png"></a> -->
-      <a href="https://www.instagram.com/_thatdesignguy/"><img src="/assets/images/ui/social/long_shadow/Instagram.png"></a>
-      <a href="https://github.com/chrisb-design"><!--<img src="/assets/images/ui/social/round_shade/Github-Icon.png"></a> -->
-      <a href="https://github.com/chrisb-design"><img src="/assets/images/ui/social/long_shadow/Github.png"></a>
-    </span>
-  </div>
-<!--    </div> -->
-</div>
-
-<div id="copyrightBar">
-  <p>Copyright &copy; 2018, Chris Barfuss. All Rights Reserved.</p>
-</div>
 </body>

@@ -2,6 +2,50 @@
 @media screen and (max-width: 1080px) { .resourceBox { column-count: 2; } }
 @media screen and (max-width: 750px) { .resourceBox { column-count: 1; } }
 
+.toolFilter {
+  width: 90vw;
+  position: absolute;
+  left: 12.5vw;
+  margin-top: -15px;
+  font-size: 1.7em;
+  cursor: default;
+  ul {
+    display: inline;
+    padding-left: 10px;
+  }
+
+  ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 5px;
+    cursor: pointer;
+    .filterTooltip { display: none; }
+  }
+
+  ul li:hover {
+    .filterTooltip { display: inline-block; }
+  }
+
+  .filterTooltip {
+    position: absolute;
+    z-index: 5;
+    background-color: $black;
+    border-radius: 4px;
+    font-size: 10pt;
+    padding: 5px;
+    color: $white;
+    transition: display 100ms ease-in;
+    pointer-events: none;
+  }
+
+  .toolFilterIcon { transition: all 250ms linear; }
+}
+
+.toolFilterIcon.active { color: $roarange; }
+.toolFilterIcon.inactive { color: $gray50; }
+.toolFilterIcon.inactive:hover { color: $black; transition: all 100ms linear; }
+
+
 .resourceBox {
   position: relative;
   column-gap: 0;
@@ -9,9 +53,7 @@
   min-height: 100vh;
   margin: 30px;
 
-  .resourcePanel {
-    break-inside: avoid;
-  }
+  .resourcePanel { break-inside: avoid; }
 
   table {
     width: 95%;
@@ -66,3 +108,5 @@
     }
   }
 }
+
+.hide { display: none; }

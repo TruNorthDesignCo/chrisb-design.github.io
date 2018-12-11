@@ -131,6 +131,51 @@ $('#contact_confirm').on('show.bs.modal', function () {
 });
 
 
+// Toolkit page filter
+$('.toolFilterIcon').click(function() {
+  $(this).siblings().addClass('inactive');
+  $(this).siblings().removeClass('active');
+  $(this).addClass('active');
+  $(this).removeClass('inactive');
+});
+
+$('#toolAll').click(function() {
+  $('#resourceBox table').removeClass('hide');
+});
+$('#toolDesign').click(function() {
+  $('#resourceBox table:not(".tagDesign")').addClass('hide');
+  $('#resourceBox table.tagDesign').removeClass('hide');
+});
+$('#toolWeb').click(function() {
+  $('#resourceBox table:not(".tagWeb")').addClass('hide');
+  $('#resourceBox table.tagWeb').removeClass('hide');
+});
+$('#toolStock').click(function() {
+  $('#resourceBox table:not(".tagStock")').addClass('hide');
+  $('#resourceBox table.tagStock').removeClass('hide');
+});
+$('#toolMarketing').click(function() {
+  $('#resourceBox table:not(".tagMarketing")').addClass('hide');
+  $('#resourceBox table.tagMarketing').removeClass('hide');
+});
+$('#toolDnD').click(function() {
+  $('#resourceBox table:not(".tagDnD")').addClass('hide');
+  $('#resourceBox table.tagDnD').removeClass('hide');
+});
+$('#toolGames').click(function() {
+  $('#resourceBox table:not(".tagGames")').addClass('hide');
+  $('#resourceBox table.tagGames').removeClass('hide');
+});
+$('#toolDraw').click(function() {
+  $('#resourceBox table:not(".tagDraw")').addClass('hide');
+  $('#resourceBox table.tagDraw').removeClass('hide');
+});
+$('#toolFood').click(function() {
+  $('#resourceBox table:not(".tagFood")').addClass('hide');
+  $('#resourceBox table.tagFood').removeClass('hide');
+});
+
+
 //Tags Column fly out
 document.querySelector('.filterButton')
   .addEventListener('click', function() {
