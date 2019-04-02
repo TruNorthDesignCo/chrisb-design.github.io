@@ -37,10 +37,7 @@
   }
   #gallery { padding-top: 30px !important; }
   #galleryWrapper { width: 300%; }
-  .galleryCard {
-    width: 50vw !important;
-    max-width: 60vw;
-  }
+  .galleryCard { width: 38vw !important; }
   .galleryCard h4 { font-size: 13pt; }
 
   // Section 3
@@ -128,26 +125,5 @@
     padding-top: 5vw;
     width: 100%;
     h2 { font-size: 10vw; }
-  }
-}
-
-
-@media screen and (min-width: 720px) {
-  .mobBreak { display: none; }
-}
-
-
-@media screen and (max-width: 600px) {
-  .dskBreak { display: none; }
-  .heroGreeting { bottom: 25vh; }
-  .heroSubtext {
-    bottom: calc(25vh - 140px);
-    max-width: 70vw;
-  }
-  .heroSpacer { padding: 0 32vw; }
-  .heroVariable {
-    left: 75px;
-    bottom: calc(25vh - 120px);
-    font-size: 2.5em;
   }
 }
