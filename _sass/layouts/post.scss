@@ -4,6 +4,7 @@
   padding: 20vh 10vw;
   min-height: 100vh;
   margin-bottom: 5vh;
+  overflow-x: hidden;
 }
 
 .article {
@@ -12,7 +13,6 @@
   margin: 30px auto;
   width: 60vw;
   max-width: 960px;
-  min-width: 380px;
   height: 100%;
   padding-bottom: 100px;
   box-shadow: 3px 3px 2px $gray20;
@@ -21,6 +21,8 @@
     text-indent: 2em;
     line-height: 2em;
     font-size: 16pt;
+    word-break: break-word;
+    hyphens: auto;
   }
   h5 {
     font-size: 22pt;

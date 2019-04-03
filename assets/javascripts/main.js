@@ -39,30 +39,38 @@ $(document).ready(function(){
 });
 
 
+
 //hover properties on nav dots
 $(function() {
-  $('.navbar').hover(function() {
-//    $('.dotstyle li').addClass('navHover');
+  $('.onepage-pagination, #navTooltips').hover(function() {
+    $('.dotstyle li').addClass('navHover');
     $('#navTooltips').addClass('navHover');
+    $('.navbar').addClass('navbarHover');
     $('.onepage-pagination').addClass('tooltipClick');
-  }, function() {
-    // on mouseout, reset the background colour
-//    $('.dotstyle li').removeClass('navHover');
-    $('#navTooltips').removeClass('navHover');
-    $('.onepage-pagination').removeClass('tooltipClick');
   });
 });
+// This one must exist separately to prevent nav elements from disappearing when moving mouse vertically across navbar
 $(function() {
-  $('.onepage-pagination').hover(function() {
-//    $('.dotstyle li').addClass('navHover');
+  $('.navbar').hover(function() {
+    $('.dotstyle li').addClass('navHover');
     $('#navTooltips').addClass('navHover');
+    $('.navbar').addClass('navbarHover');
     $('.onepage-pagination').addClass('tooltipClick');
   }, function() {
-//    $('.dotstyle li').addClass('navHover');
+    $('.dotstyle li').addClass('navHover');
     $('#navTooltips').removeClass('navHover');
+    $('.navbar').removeClass('navbarHover');
     $('.onepage-pagination').removeClass('tooltipClick');
   });
 });
+// To prevent navbar from getting stuck when touch users click directly on a nav bullet
+$('body').click(function() {
+  $('.dotstyle li').addClass('navHover');
+  $('#navTooltips').removeClass('navHover');
+  $('.navbar').removeClass('navbarHover');
+  $('.onepage-pagination').removeClass('tooltipClick');
+});
+
 
 
 //about section flyout

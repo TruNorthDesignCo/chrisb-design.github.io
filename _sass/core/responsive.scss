@@ -21,7 +21,7 @@
 
 @media screen and (max-width: 900px) {
   .section2, .section3, .section4 {
-    background-image: url('/assets/images/textures/connectwork.png');
+    background-image: url('/assets/images/textures/pixel_weave_inv.png');
     background-repeat: repeat;
     padding: 30px 30px 30px 60px;
   }
@@ -37,7 +37,10 @@
   }
   #gallery { padding-top: 30px !important; }
   #galleryWrapper { width: 300%; }
-  .galleryCard { width: 38vw !important; }
+  .galleryCard {
+    width: 50vw !important;
+    max-width: 60vw;
+  }
   .galleryCard h4 { font-size: 13pt; }
 
   // Section 3
@@ -49,8 +52,8 @@
   }
 
   .brandsGrid {
-    right: 30px;
-    width: 80vw;
+    right: 10vw;
+    width: 75vw;
     height: 65vh;
     bottom: 15px;
     top: auto;
@@ -59,7 +62,7 @@
 
   // Section 4
   .contactRight {
-    width: 95vw;
+    width: 85vw;
     height:40vh;
     border-left: none;
     padding-left: 0;
@@ -70,7 +73,7 @@
     margin: 0 auto;
   }
   .contactRight p {
-    width: 90vw;
+    width: 80vw;
     margin: 30px;
     text-align: center;
   }
@@ -84,6 +87,38 @@
   }
   .desktopContact { display: none; }
   .mobileContact { display: block; }
+
+  // About Section
+  .about {
+    width: 100vw;
+    margin: 5vh 0;
+    border-right: none;
+
+    p {
+      width: 70vw;
+      margin: 15px 15vw;
+    }
+  }
+  .activeAbout { width: 100vw !important; }
+  .about img {
+    width: 60vw;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+  .about .hello {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 3.5em;
+  }
+  .aboutClose {
+    top: 15px;
+    left: 90vw;
+    font-size: 3em;
+  }
+  .activeAboutDots { left: 100vw !important; }
+  .activeAboutTooltips { left: 100vw !important; }
 }
 
 @media screen and (max-width:760px) {
@@ -92,6 +127,8 @@
 }
 
 @media screen and (max-width: 720px) {
+  .dskBreak { display: none; }
+
   // Section 1
   .heroWrapper {
     right: auto;
@@ -103,15 +140,17 @@
     margin: 0;
 
   }
-  .heroGreeting { bottom: 20vh; }
-  .heroSubtext  {
+  .heroGreeting { bottom: 25vh; }
+  .heroSubtext {
     left: auto;
-    margin-bottom: 0;
-    bottom: calc(20vh - 80px);
+    bottom: calc(25vh - 140px);
+    max-width: 70vw;
   }
+  .heroSpacer { padding: 0 32vw; }
   .heroVariable {
-    left: 100px;
-    bottom: calc(20vh - 68px);
+    left: 75px;
+    bottom: calc(25vh - 120px);
+    font-size: 2.5em;
   }
 
   // Blog
@@ -122,8 +161,27 @@
   }
   .articleWrapper { padding: 80px 5vw; }
   .article {
-    padding-top: 5vw;
+    padding: 5vw 30px 0 30px;
     width: 100%;
     h2 { font-size: 10vw; }
   }
+
+  // Nav (non-homepage)
+  #nav p { font-size: 18px; }
+  #wordmark { font-size: 28px; }
+
+  // Toolkit
+  .toolFilter {
+    left: unset;
+    overflow-y: hidden;
+  }
+  .resourceBox {
+    margin: 30px 0 30px -5vw;
+    width: 90vw;
+  }
+}
+
+
+@media screen and (min-width: 720px) {
+  .mobBreak { display: none; }
 }

@@ -11,7 +11,7 @@
 
 #navTooltips .activeAboutTooltips .navHover { margin-left: 0 !important; }
 
-.tooltipClick {
+.tooltipClick, {
   li:not(.secondary) { width: 195px !important; }
   .secondary a { width: 195px !important; }
 }
@@ -35,18 +35,18 @@
     vertical-align: bottom;
     margin-left: 30px;
   }
-  p { width: 50vw; }
+  p { width: calc(50vw - 30px); }
 }
 
 .aboutClose {
   position: absolute;
   top: 50vh;
-  left: calc(80vw - 270px);
+  left: calc(80vw - 230px);
   color: $bluejade;
 }
 .aboutClose:hover { color: $white; }
 
-.onepage-pagination:hover ~ .navbar, .navbar:hover {
+.onepage-pagination:hover ~ .navbar, .tooltipClick ~ .navbar, .navbarHover, .navbar:hover {
   background-color: $transparent-black-dark;
   transition: all 0.25s linear;
   width: 200px;

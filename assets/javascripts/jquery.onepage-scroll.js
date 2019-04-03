@@ -49,6 +49,7 @@
           if (touches && touches.length) {
             startX = touches[0].pageX;
             startY = touches[0].pageY;
+            $this.unbind('touchmove', touchmove);
             $this.bind('touchmove', touchmove);
           }
         }
@@ -58,7 +59,7 @@
           if (touches && touches.length) {
             var deltaX = startX - touches[0].pageX;
             var deltaY = startY - touches[0].pageY;
-
+            event.preventDefault();
             if (deltaX >= 50) {
               $this.trigger("swipeLeft");
             }

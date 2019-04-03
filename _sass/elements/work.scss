@@ -33,7 +33,7 @@
 
 #galleryWrapper {
 //  margin-left: calc(8vw - 30px);
-  width: 150%;
+  width: 250%;
   height: 50vh;
   margin-top: 5vh;
 }
@@ -44,9 +44,9 @@ figure.galleryCard {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  margin: 10px 1%;
-  width: 18vw;
-  height: 48vh;
+  margin: 10px 1% 10vh 1%;
+  width: 500px;
+  height: calc(80vh - 15vw);
   color: #000000;
   text-align: center;
   cursor: pointer;

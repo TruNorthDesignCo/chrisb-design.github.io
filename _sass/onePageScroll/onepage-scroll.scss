@@ -14,6 +14,8 @@ body, .onepage-wrapper, html {
   height: 100%;
 }
 
+body.disabled-onepage-scroll { -webkit-overflow-scrolling:touch; }
+
 .onepage-wrapper {
   width: 100%;
   height: 100%;
