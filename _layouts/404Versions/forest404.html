@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="{{ site.lang }}">
+<!--<![endif]-->
+
+<head>
+  {% include common/meta.html %}
+
+  <title>404: Page Not Found!</title>
+  <meta name="author" content="Chris Barfuss">
+  <meta name="description" content="Freelance Graphic Designer, Front-End Developer, and Marketing Specialist">
+  <meta name="keywords" content="graphic design, marketing, web developer, advertising, freelance, idaho">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+    @import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+    h1 {
+      z-index: 5;
+      font-family: 'Permanent Marker', monospace;
+      margin: 0 auto;
+      text-align: center;
+      width: 100vw;
+      font-size: 25vw;
+      color: white;
+      text-shadow: 2px 10px 10px black;
+    }
+
+    h2 {
+      z-index: 5;
+      text-align: center;
+      width: 100vw;
+      font-size: 2em;
+      font-family: 'Permanent Marker', sans-serif;
+      color: white;
+      text-shadow: 2px 5px 5px black;
+      padding-bottom: 5vh;
+      margin-top: -20px;
+    }
+
+    h3 {
+      z-index: 5;
+      margin-left: 15vw;
+      width: 70vw;
+      font-size: 2em;
+      font-family: 'Permanent Marker', sans-serif;
+      color: white;
+      text-shadow: 2px 5px 5px black;
+    }
+
+    p {
+      z-index: 5;
+      margin-left: 15vw;
+      width: 70vw;
+      font-size: 1.5em;
+      font-family: 'Raleway', sans-serif;
+      color: white;
+      text-shadow: 2px 5px 5px black;
+    }
+
+    .marker { font-family: 'Permanent Marker', sans-serif; }
+
+    .missing {
+      position: absolute;
+      background-image: url('/assets/images/photos/path.jpg');
+      background-color: rgba(0, 0, 0, 0.5);
+      background-blend-mode: darken;
+      background-attachment: fixed;
+      background-position: 60%;
+      background-size: cover;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -100;
+    }
+
+    .fullscreen-bg__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: brightness(50%);
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        height: 300%;
+        top: -100%;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        width: 300%;
+        left: -100%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .fullscreen-bg {
+        background: url('../img/videoframe.jpg') center center / cover no-repeat;
+      }
+
+      .fullscreen-bg__video {
+        display: none;
+      }
+    }
+
+    .top {
+      position: absolute;
+      height: 100%;
+      z-index: 5;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    .top a {
+      color: #00d679;
+      text-decoration: none;
+    }
+
+    .top p:nth-last-child(1) {
+      padding-bottom: 100px;
+    }
+
+    .logo {
+      width: 100vw;
+      height: 10vh;
+      margin: 30px auto 0;
+    }
+  </style>
+
+  <div class="missing">
+    <div class="fullscreen-bg">
+      <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        <source src="/assets/videos/forest.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="top">
+      <a href="/"><img class="logo" src="/assets/images/logo/barefoot_footer_inv.svg"></a>
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <h3>So, you took the road less traveled.</h3>
+      <p>Look, I get it. You're a creative. You color outside the lines. You're willing to go where no man has gone before.</p>
+      <p>Here's the thing: You can't do that here. It's <em>literally </em> impossible. Besides, <span class="marker">It's dangerous to go alone.</span><!-- And of course, this isn't <em>my</em> fault. I mean, me, making a mistake? <span class="marker"><em>Inconceivable</em></span>.--></p>
+      <p>So, though I respect your independence and appreciate your free-thinking attitude, let's agree to <span class="marker"><a href="javascript:history.back()">get back on the path</a></span>, shall we?</p>
+    </div>
+  </div>
+</body>
+</html>
