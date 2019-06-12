@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="{{ site.lang }}">
+<!--<![endif]-->
+
+<head>
+  {% include common/meta.html %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+  <link href='{{ site.baseurl }}/css/home.css' rel="stylesheet" type="text/css">
+  {% include common/libraries.html %}
+  {% include scripts/giggle.html %}
+
+  <title>Chris Barfuss - Giggle</title>
+  <meta name="robots" content="noindex">
+  <meta name="author" content="Chris Barfuss">
+  <meta name="description" content="This page is a secret. Shhhhhhhhhh.">
+  <meta name="keywords" content="chris, barfuss, giggle">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="wordmarkMiniBox">
+    <div id="wordmarkMini">
+      <span><img src="/assets/images/logo/barefoot_icon_inv.svg"></span>
+    </div>
+  </div>
+
+  <nav id="nav">
+    <span id="wordmark"><a href="/" class="nobreak">Chris Barfuss</a></span>&nbsp;|&nbsp;GIGGLE <i class="far fa-grin-squint-tears"></i>
+  </nav>
+
+<!--------------------------- Start Body ---------------------------------------->
+
+  <div class="contentWrapper">
+    <div class="contentFrame">
+      {% include partials/giggleList.html %}
+      <input id="randomize" type="button" value="Another!"></input>
+    </div>
+  </div>
+
+  {% include partials/footer.html %}
+</body>

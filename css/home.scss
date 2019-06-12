@@ -2,9 +2,6 @@
 ---
 @charset "utf-8";
 
-//globals
-@import "globals";
-
 //core
 @import "core/normalize";
 @import "core/animate";
@@ -14,11 +11,15 @@
 @import "definitions/colors";
 @import "definitions/typography";
 
+//globals
+@import "globals";
+
 //layouts
 @import "layouts/homepage";
 @import "layouts/blog";
 @import "layouts/toolkit";
 @import "layouts/post";
+@import "layouts/giggle";
 
 //components
 @import "components/nav";
@@ -31,8 +32,10 @@
 
 //elements
 @import "elements/hero";
+@import "elements/services";
 @import "elements/work";
 @import "elements/brand";
+@import "elements/reviews";
 @import "elements/contact";
 
 //viewport sizing

@@ -3,6 +3,9 @@
     padding-top: 10vh;
     .blogBlockText { font-size: 9em; }
   }
+  .section2, .section3, .section4, .section5, .section6 {
+    padding-left: 150px;
+  }
 }
 
 @media screen and (max-width: 1080px) {
@@ -28,7 +31,7 @@
 
   // Section 1
 
-  // Section 2
+  // Section 3
   .workCopy {
     margin: 0 0 0 15px;
     width: 100%;
@@ -43,7 +46,7 @@
   }
   .galleryCard h4 { font-size: 13pt; }
 
-  // Section 3
+  // Section 4
   .brandCopy {
     width: 80vw;
     padding: 30px 0 0 15px;
@@ -60,7 +63,7 @@
     td { height:  12vh; width: auto; }
   }
 
-  // Section 4
+  // Section 6
   .contactRight {
     width: 85vw;
     height:40vh;
@@ -153,6 +156,8 @@
     font-size: 2.5em;
   }
 
+  .testimony q, .testimony .author { font-size: 1em !important; }
+
   // Blog
   .tagsColumn { width: 80vw; }
   #recent {
@@ -184,4 +189,17 @@
 
 @media screen and (min-width: 720px) {
   .mobBreak { display: none; }
+}
+
+@media screen and (max-width: 600px) {
+  .serviceTable .serviceCard {
+    padding: 5%;
+    width: 90%;
+    &:nth-child(even) { margin: 30px 0 !important; }
+  }
+  .testimony {
+    padding: 30px;
+    q { font-size: 1em; }
+    .author { font-size: 1em; }
+  }
 }

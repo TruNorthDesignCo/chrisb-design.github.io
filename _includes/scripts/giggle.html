@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+  // Show/ hide function for punchline
+  function showPunchline(obj) {
+    var inner = obj.parentNode.getElementsByTagName("div")[0];
+    if (inner.style.display == "none")
+        inner.style.display = "";
+    else
+        inner.style.display = "none";
+  }
+
+  // show random giggleCard
+  var goRandom = function() {
+    var items = $('div.contentFrame .giggleFrame').length;
+    var rnd = Math.floor(Math.random() * items);
+
+    $("div.contentFrame .giggleFrame").eq(rnd).css('display', 'block');
+  };
+
+  $(document).ready(function() {
+    goRandom();
+    $('#randomize').click(function() {
+      $('.giggleFrame').css('display', 'none');
+      goRandom();
+    });
+  });
+</script>
