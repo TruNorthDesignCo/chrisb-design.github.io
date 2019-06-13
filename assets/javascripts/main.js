@@ -17,6 +17,7 @@ $("#blogBlock").hover(function(){
 });
 */
 
+
 // .wordmarkMini Appear
 $(window).scroll(function() {
     if ($(this).scrollTop()) {
@@ -181,36 +182,6 @@ $('#toolDraw').click(function() {
 $('#toolFood').click(function() {
   $('#resourceBox table:not(".tagFood")').addClass('hide');
   $('#resourceBox table.tagFood').removeClass('hide');
-});
-
-
-//Tags Column fly out
-document.querySelector('.filterButton')
-  .addEventListener('click', function() {
-    if($('.tagsColumn').css('display') == 'block') {
-    $('.filterButton').addClass('inactive');
-    $('.filterButton').removeClass('active');
-    $('.tagsColumn').slideUp();
-	} else {
-    $('.filterButton').addClass('active');
-    $('.filterButton').removeClass('inactive');
-    $('.tagsColumn').slideDown('slow');
-	}
-});
-
-// Hide Tags Column on outside click
-$('html').click(function() {
-  $('.filterButton').addClass('inactive');
-  $('.filterButton').removeClass('active');
-  $('.tagsColumn').slideUp();
-});
-
-//exceptions:
-$('.filterButton').click(function(event) {
-  event.stopPropagation();
-});
-$('.tagsColumn').click(function(event) {
-  event.stopPropagation();
 });
 
 
