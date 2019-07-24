@@ -3,17 +3,11 @@
 //@media screen and (max-width: 750px) { #gallery { column-count: 1; } }
 
 .workCopy {
-  width: 70vw;
+  width: 60vw;
   padding: 5vh 10vw 0 10vw;
   font-size: 1.7em;
 }
 
-#gallery {
-  width: 100%;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  padding-bottom: 15px;
-}
 #gallery::-webkit-scrollbar-track {
   background-color: $transparent-black-med;
   padding: 5px 0;
@@ -22,7 +16,7 @@
 #gallery::-webkit-scrollbar {
   height: 12px;
   margin-top: 15px;
-  width: 50vw;
+  width: 15px;
   padding: 0 100px;
   opacity: 50%;
   border-radius: 3px;
@@ -34,11 +28,21 @@
   border-radius: 3px;
 }
 
+#gallery {
+  width: 100%;
+  height: 70vh;
+  max-width: 1200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 15px;
+}
+
 #galleryWrapper {
 //  margin-left: calc(8vw - 30px);
-  width: calc(100% + 75vw);
-  height: 50vh;
+  width: 100%;
+  height: 70vh;
   max-height: 550px;
+  margin: 0 5%;
 }
 
 figure.galleryCard {
@@ -47,10 +51,9 @@ figure.galleryCard {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  margin: 10px 1% 10vh 1%;
-  width: 300px;
-  height: 48vh;
-  max-height: 500px;
+  margin: 10px 1% 1% 1%;
+  width: 250px;
+  height: 250px;
   color: #000000;
   text-align: center;
   cursor: pointer;
@@ -152,7 +155,7 @@ figure.galleryCard.hover figcaption p {
     max-width: 80%;
     max-height: 50vh;
     object-fit: contain;
-    margin: 30px;
+    margin: 30px 7vw;
   }
 }
 
@@ -178,4 +181,78 @@ figure.galleryCard.hover figcaption p {
     border: solid 1px $roarange;
     transition: color 100ms linear, border 100ms linear;
   }
+}
+
+// Before & After comparison slider
+.comparisonContainer {
+  width: 80%;
+  min-width: 800px;
+  height: 60%;
+  margin: 30px auto 10px;
+  border: none;
+  background: url('/assets/images/work/mv.com_new.png');
+  background-size: cover;
+  background-
+
+  &::before {
+    content: 'Before';
+    position: absolute;
+    color: $white;
+    left: 1%;
+    top: 5px;
+    margin-top: 20px;
+    margin-left: 10%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+  }
+
+  &::after {
+    content: 'After';
+    position: absolute;
+    color: $white;
+    top: 5px;
+    margin-top: 20px;
+    margin-left: calc(80% - 70px);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+  }
+
+  div {
+    height: 100%;
+    width: 10%;
+    max-width: 99%;
+    resize: horizontal;
+    // border-right: solid 1px #ccc;
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-name: preview;
+    background: url('/assets/images/work/mv.com_old.png');
+    background-size: cover;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      background: $bluejade;
+      bottom: 0;
+      right: 0;
+      border: solid 1px white;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-right: 0;
+      border-bottom: 0;
+      cursor: col-resize;
+    }
+  }
+}
+
+@keyframes preview {
+    0% {width: 10%;}
+    50% {width: 90%;}
+    100% {width: 10%;}
 }

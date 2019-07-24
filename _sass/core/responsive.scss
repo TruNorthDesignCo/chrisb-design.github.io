@@ -38,11 +38,9 @@
     padding: 0;
     font-size: 16pt;
   }
-  #gallery { padding-top: 30px !important; }
-  #galleryWrapper { width: 300%; }
-  .galleryCard {
-    width: 50vw !important;
-    max-width: 60vw;
+  #gallery {
+    height: 70vh;
+    padding-top: 30px !important;
   }
   .galleryCard h4 { font-size: 13pt; }
 
