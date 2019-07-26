@@ -361,10 +361,13 @@
 
 
     $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
-      event.preventDefault();
-      var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-      if(!$("body").hasClass("disabled-onepage-scroll")) init_scroll(event, delta);
-    });
+  // check whether this is a scrollable element
+  if(event.target.nodeName != 'OPTION' && event.target.clientHeight >= event.target.scrollHeight) {
+    event.preventDefault();
+    var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+    if(!$("body").hasClass("disabled-onepage-scroll")) init_scroll(event, delta);
+  }
+});
 
 
     if(settings.responsiveFallback != false) {
