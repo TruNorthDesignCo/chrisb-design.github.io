@@ -161,7 +161,8 @@ figure.galleryCard:nth-child(even) {
     max-width: 80%;
     max-height: 50vh;
     object-fit: contain;
-    margin: 30px 7vw;
+    margin: 30px auto;
+    display: block;
   }
 }
 
