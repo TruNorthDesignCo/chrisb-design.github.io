@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="{{ site.lang }}">
+<!--<![endif]-->
+
+<head>
+  {% include common/meta.html %}
+
+  <title>Thanks for reaching out!</title>
+  <meta name="author" content="Chris Barfuss">
+  <meta name="description" content="Freelance Graphic Designer, Front-End Developer, and Marketing Specialist">
+  <meta name="keywords" content="graphic design, marketing, web developer, advertising, freelance, idaho">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+    @import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+    h1 {
+      z-index: 5;
+      font-family: 'Permanent Marker', monospace;
+      margin: 0 auto;
+      text-align: center;
+      width: 100vw;
+      font-size: 25vw;
+      color: white;
+      text-shadow: 2px 10px 10px black;
+    }
+
+    h2 {
+      z-index: 5;
+      text-align: center;
+      width: 100vw;
+      font-size: 2em;
+      font-family: 'Permanent Marker', sans-serif;
+      color: white;
+      text-shadow: 2px 5px 5px black;
+      margin-top: 100px;
+    }
+
+    p {
+      z-index: 5;
+      width: 100vw;
+      font-size: 1.5em;
+      font-family: 'Raleway', sans-serif;
+      color: white;
+      text-shadow: 2px 5px 5px black;
+      text-align: center;
+    }
+
+    .marker { font-family: 'Permanent Marker', sans-serif; }
+
+    .contactConfirm {
+      position: absolute;
+      background-image: url('/assets/images/textures/connectwork.png');
+      background-size: auto;
+      background-repeat: repeat;
+      background-color: rgba(0, 0, 0, 0.25);
+      background-blend-mode: darken;
+      background-attachment: fixed;
+      background-position: 60%;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      color: white;
+      font-size: 1.5em;
+      font-family: 'Raleway', 'Trebuchet', sans-serif;
+    }
+
+    .top {
+      position: absolute;
+      height: 100%;
+      z-index: 5;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    .top a {
+      color: #00d679;
+      text-decoration: none;
+    }
+
+    .top p:nth-last-child(1) {
+      padding-bottom: 100px;
+    }
+
+    .logo {
+      width: 100vw;
+      height: 10vh;
+      margin: 30px auto 0;
+    }
+
+    button {
+      position: absolute;
+      left: calc(50% - 90px);
+      width: 180px;
+      height: 45px;
+      font-size: 16pt;
+      background-color: rgba(255, 255, 255, 0);
+      border: solid 1px rgb(0, 214, 121);
+      color: rgb(0, 214, 121);
+      font-family: 'Raleway', 'Trebuchet', sans-serif;
+      text-transform: uppercase;
+      transition: all 0.1s linear;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgba(255, 255, 255, 0);
+      border: solid 1px rgb(255, 86, 41);
+      color: rgb(255, 86, 41);
+      transition: all 0.1s linear;
+    }
+  </style>
+
+  <script language="javascript" type="text/javascript">
+  function windowClose() {
+  window.open('','_parent','');
+  window.close();
+  }
+  </script>
+
+  <div class="contactConfirm">
+    <div class="top">
+      <a href="/"><img class="logo" src="/assets/images/logo/barefoot_footer_inv.svg"></a>
+        <br />
+        <h2>Thanks for reaching out!</h2>
+        <p>I'll get back to you ASAP.</p>
+        <br />
+        <button type="button" class="btn btn-default" onclick="windowClose();">Close</button>
+    </div>
+  </div>
+</body>
+</html>

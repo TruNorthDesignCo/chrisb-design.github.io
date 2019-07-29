@@ -119,7 +119,7 @@ $('.reset').click(function() {
   $('.textCounter').html("(102/102)");
 });
 
-
+/*
 // Contact Form Confirmation (desktop)
 $("#contact").on("submit", function(e){
 //	event.preventDefault();
@@ -138,7 +138,7 @@ $('#contact_confirm').on('show.bs.modal', function () {
         $(this).modal('hide');
     });
 });
-
+*/
 
 // Toolkit page filter
 $('.toolFilterIcon').click(function() {
