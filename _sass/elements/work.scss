@@ -47,7 +47,7 @@
 }
 
 figure.galleryCard {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Abel', 'Trebuchet', sans-serif;
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -171,13 +171,13 @@ figure.galleryCard:nth-child(even) {
   p {
     text-align: left;
     color: $white;
-    font-family: 'Raleway', 'Trebuchet', sans-serif;
+    font-family: 'Abel', 'Trebuchet', sans-serif;
   }
   button {
     background-color: $transparent;
     border: solid 1px $white;
     border-radius: 0;
-    font-family: 'Raleway', 'Trebuchet', sans-serif;
+    font-family: 'Abel', 'Trebuchet', sans-serif;
     text-transform: uppercase;
     color: $white;
     transition: color 100ms linear, border 100ms linear;
@@ -209,7 +209,7 @@ figure.galleryCard:nth-child(even) {
     top: 5px;
     margin-top: 20px;
     margin-left: 10%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Abel', sans-serif;
     font-weight: bold;
   }
 
@@ -220,7 +220,7 @@ figure.galleryCard:nth-child(even) {
     top: 5px;
     margin-top: 20px;
     margin-left: calc(80% - 70px);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Abel', sans-serif;
     font-weight: bold;
   }
 
