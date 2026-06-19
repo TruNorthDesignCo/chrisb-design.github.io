@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D 5e Initiative & Combat Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen antialiased font-sans">
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Standard D&D Status Conditions (Debuffs)
+        const DEBUFF_CONDITIONS = [
+            'Blinded', 'Charmed', 'Deafened', 'Frightened', 'Grappled', 
+            'Incapacitated', 'Polymorphed', 'Paralyzed', 'Petrified', 
+            'Poisoned', 'Prone', 'Restrained', 'Stunned', 'Exhausted', 
+            'Unconscious', 'Slowed', 'Hexed', 'Madness', 'Banished', 
+            'Marked', 'Bane'
+        ];
+
+        // Fictional & Mechanical Combat Buffs (Positive)
+        const BUFF_CONDITIONS = [
+            'Blessed', 'Concentrating', 'Guidance', 'Hasted', 'Raging', 'Invisible', 'Shielded'
+        ];
+
+        // Combined and Alphabetized for clean dropdown rendering
+        const ALL_CONDITIONS = [...DEBUFF_CONDITIONS, ...BUFF_CONDITIONS].sort();
+
+        const initialCharacters = [
+           {
+                id: '1',
+                name: 'Theodren',
+                currentHp: '39',
+                maxHp: 39,
+                tempHp: '0',
+                ac: 14,
+                initMod: 2,
+                initScore: 0,
+                isActive: true,
+                deathSaves: { successes: 0, failures: 0 },
+                conditions: []
+            },
+            {
+                id: '2',
+                name: 'Elyndor',
+                currentHp: '22',
+                maxHp: 22,
+                tempHp: '0',
+                ac: 10,
+                initMod: 0,
+                initScore: 0,
+                isActive: true,
+                deathSaves: { successes: 0, failures: 0 },
+                conditions: []
+            },
+            {
+                id: '3',
+                name: 'Thragor',
+                currentHp: '50',
+                maxHp: 50,
+                tempHp: '0',
+                ac: 15,
+                initMod: 2,
+                initScore: 0,
+                isActive: false,
+                deathSaves: { successes: 0, failures: 0 },
+                conditions: []
+            }
+        ];
+
+        function App() {
+            const [characters, setCharacters] = useState(initialCharacters);
+            
+            // Form State
+            const [form, setForm] = useState({
+                name: '',
+                currentHp: '',
+                maxHp: '',
+                tempHp: '0',
+                ac: '',
+                initMod: '',
+                isEnemy: false
+            });
+
+            const handleInputChange = (e) => {
+                const { name, value, type, checked } = e.target;
+                setForm(prev => ({ 
+                    ...prev, 
+                    [name]: type === 'checkbox' ? checked : value 
+                }));
+            };
+
+            const addCharacter = (e) => {
+                e.preventDefault();
+                if (!form.name) return;
+
+                const newChar = {
+                    id: Date.now().toString(),
+                    name: form.name,
+                    currentHp: form.currentHp || form.maxHp || '0',
+                    maxHp: parseInt(form.maxHp) || 10,
+                    tempHp: form.tempHp || '0',
+                    ac: parseInt(form.ac) || 10,
+                    initMod: parseInt(form.initMod) || 0,
+                    initScore: 0,
+                    isActive: true,
+                    isEnemy: form.isEnemy,
+                    deathSaves: { successes: 0, failures: 0 },
+                    conditions: []
+                };
+
+                setCharacters(prev => [...prev, newChar]);
+                setForm({ name: '', currentHp: '', maxHp: '', tempHp: '0', ac: '', initMod: '', isEnemy: false });
+            };
+
+            const updateCharacterField = (id, field, value) => {
+                setCharacters(prev => prev.map(char => {
+                    if (char.id === id) {
+                        const updated = { ...char, [field]: value };
+                        if (field === 'currentHp' && parseInt(value, 10) > 0) {
+                            updated.deathSaves = { successes: 0, failures: 0 };
+                        }
+                        return updated;
+                    }
+                    return char;
+                }));
+            };
+
+            const rollD20 = () => Math.floor(Math.random() * 20) + 1;
+
+            const rollSingleInitiative = (id) => {
+                setCharacters(prev => prev.map(char => {
+                    if (char.id === id) {
+                        return { ...char, initScore: rollD20() + char.initMod };
+                    }
+                    return char;
+                }));
+            };
+
+            const rollAllInitiatives = () => {
+                setCharacters(prev => prev.map(char => {
+                    if (char.isActive) {
+                        return { ...char, initScore: rollD20() + char.initMod };
+                    }
+                    return char;
+                }));
+            };
+
+            const sortInitiative = () => {
+                setCharacters(prev => [...prev].sort((a, b) => {
+                    if (a.isActive && !b.isActive) return -1;
+                    if (!a.isActive && b.isActive) return 1;
+                    if (a.isActive && b.isActive) return b.initScore - a.initScore;
+                    return 0;
+                }));
+            };
+
+            const toggleActive = (id) => {
+                setCharacters(prev => prev.map(char => 
+                    char.id === id ? { ...char, isActive: !char.isActive } : char
+                ));
+            };
+
+            const toggleEnemy = (id) => {
+                setCharacters(prev => prev.map(char => 
+                    char.id === id ? { ...char, isEnemy: !char.isEnemy } : char
+                ));
+            };
+
+            const duplicateCharacter = (id) => {
+                const target = characters.find(char => char.id === id);
+                if (!target) return;
+                
+                const match = target.name.match(/^(.*?)(?:\s+(\d+))?$/);
+                const baseName = match && match[1] ? match[1].trim() : target.name;
+                
+                let maxNum = 1;
+                characters.forEach(char => {
+                    const charMatch = char.name.match(/^(.*?)(?:\s+(\d+))?$/);
+                    if (charMatch && charMatch[1] && charMatch[1].trim() === baseName) {
+                        const num = charMatch[2] ? parseInt(charMatch[2], 10) : 1;
+                        if (num > maxNum) maxNum = num;
+                    }
+                });
+                
+                const nextNum = maxNum + 1;
+                const iteratedName = `${baseName} ${nextNum}`;
+                
+                const duplicate = {
+                    ...target,
+                    id: Date.now().toString() + Math.random().toString(36).substr(2, 5),
+                    name: iteratedName,
+                    deathSaves: { successes: 0, failures: 0 },
+                    conditions: [...target.conditions]
+                };
+                
+                setCharacters(prev => [...prev, duplicate]);
+            };
+
+            const removeCharacter = (id) => {
+                setCharacters(prev => prev.filter(char => char.id !== id));
+            };
+
+            const handleDeathSaveToggle = (id, type, index) => {
+                setCharacters(prev => prev.map(char => {
+                    if (char.id === id) {
+                        const currentCount = char.deathSaves[type];
+                        const newCount = currentCount === index ? index - 1 : index;
+                        return {
+                            ...char,
+                            deathSaves: { ...char.deathSaves, [type]: Math.max(0, newCount) }
+                        };
+                    }
+                    return char;
+                }));
+            };
+
+            const stabilizeCharacter = (id) => {
+                setCharacters(prev => prev.map(char => 
+                    char.id === id ? { ...char, deathSaves: { successes: 3, failures: 0 } } : char
+                ));
+            };
+
+            const addCondition = (id, condition) => {
+                if (!condition) return;
+                setCharacters(prev => prev.map(char => {
+                    if (char.id === id && !char.conditions.includes(condition)) {
+                        return { ...char, conditions: [...char.conditions, condition] };
+                    }
+                    return char;
+                }));
+            };
+
+            const removeCondition = (id, conditionToRemove) => {
+                setCharacters(prev => prev.map(char => {
+                    if (char.id === id) {
+                        return { ...char, conditions: char.conditions.filter(c => c !== conditionToRemove) };
+                    }
+                    return char;
+                }));
+            };
+
+            const saveToFile = () => {
+                const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(characters, null, 2));
+                const downloadAnchor = document.createElement('a');
+                downloadAnchor.setAttribute("href", dataStr);
+                downloadAnchor.setAttribute("download", "encounter_save.json");
+                document.body.appendChild(downloadAnchor);
+                downloadAnchor.click();
+                downloadAnchor.remove();
+            };
+
+            const loadFromFile = (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                    try {
+                        const parsedData = JSON.parse(evt.target.result);
+                        if (Array.isArray(parsedData)) {
+                            setCharacters(parsedData);
+                        } else {
+                            alert("Invalid file structure. Encounter file must be a JSON list configuration.");
+                        }
+                    } catch (err) {
+                        alert("Error processing file. Please verify it is a valid JSON ecosystem save.");
+                    }
+                };
+                reader.readAsText(file);
+                e.target.value = ''; // Wipe choice field to permit instantaneous reloading
+            };
+
+            return (
+                <div class="container mx-auto p-4 max-w-5xl">
+                    <header class="mb-8 text-center border-b border-slate-800 pb-4">
+                        <h1 class="text-4xl font-bold text-amber-500 tracking-wide">⚔️ D&D Initiative Tracker ⚔️</h1>
+                    </header>
+
+                    {/* Character Add Form */}
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-xl mb-6 border border-slate-700">
+                        <h2 class="text-xl font-semibold mb-4 text-slate-300">Add Combatant</h2>
+                        <form onSubmit={addCharacter} class="grid grid-cols-2 md:grid-cols-6 gap-4 items-end">
+                            <div class="col-span-2 md:col-span-2">
+                                <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Name</label>
+                                <input required type="text" name="name" value={form.name} onChange={handleInputChange} placeholder="e.g. Goblin, Aragorn" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-slate-100 focus:outline-none focus:border-amber-500"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Max HP</label>
+                                <input type="number" name="maxHp" value={form.maxHp} onChange={handleInputChange} placeholder="20" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-slate-100 focus:outline-none focus:border-amber-500"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Current HP</label>
+                                <input type="text" name="currentHp" value={form.currentHp} onChange={handleInputChange} placeholder="Same as Max" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-slate-100 focus:outline-none focus:border-amber-500"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">AC</label>
+                                <input type="number" name="ac" value={form.ac} onChange={handleInputChange} placeholder="15" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-slate-100 focus:outline-none focus:border-amber-500"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Init Modifier</label>
+                                <input type="number" name="initMod" value={form.initMod} onChange={handleInputChange} placeholder="+2" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-slate-100 focus:outline-none focus:border-amber-500"/>
+                            </div>
+                            <div class="col-span-2 md:col-span-6 flex flex-wrap justify-between items-center mt-2 gap-4">
+                                <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer select-none">
+                                    <input type="checkbox" name="isEnemy" checked={form.isEnemy} onChange={handleInputChange} class="w-4 h-4 bg-slate-900 border-slate-700 text-rose-600 rounded focus:ring-0 focus:ring-offset-0"/>
+                                    Mark as Enemy / Foe
+                                </label>
+                                <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-6 rounded shadow cursor-pointer transition">
+                                    + Add to Tracker
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    {/* Global Commands */}
+                    <div class="flex flex-wrap gap-3 justify-between items-center mb-6 bg-slate-800/50 p-4 rounded-lg border border-slate-800">
+                        <div class="flex flex-wrap gap-3">
+                            <button onClick={rollAllInitiatives} class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2 px-4 rounded transition cursor-pointer shadow">
+                                🎲 Roll All Initiatives
+                            </button>
+                            <button onClick={sortInitiative} class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 px-4 rounded transition cursor-pointer shadow">
+                                🔃 Sort by Initiative
+                            </button>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <label class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-semibold py-2 px-4 rounded transition cursor-pointer shadow flex items-center gap-1.5 select-none">
+                                📂 Load Encounter
+                                <input type="file" accept=".json" onChange={loadFromFile} class="hidden" />
+                            </label>
+                            <button onClick={saveToFile} class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-semibold py-2 px-4 rounded transition cursor-pointer shadow">
+                                💾 Save Encounter
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Combatant Roster */}
+                    <div class="space-y-4">
+                        {characters.map((char) => {
+                            const hpVal = parseInt(char.currentHp, 10);
+                            const isDown = !isNaN(hpVal) && hpVal <= 0;
+                            
+                            // Determine Card Colors and Alignment
+                            let baseCardStyles = "rounded-lg border shadow-md transition p-4 ";
+                            if (!char.isActive) {
+                                baseCardStyles += "bg-slate-900/40 border-slate-800 opacity-50 ";
+                            } else if (char.isEnemy) {
+                                baseCardStyles += "bg-rose-950/20 border-rose-900/60 md:ml-6 ml-3 ";
+                            } else {
+                                baseCardStyles += "bg-slate-800 border-slate-700 ";
+                            }
+
+                            return (
+                                <div key={char.id} class={baseCardStyles}>
+                                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                                        
+                                        {/* Left Side: Initiative and Name */}
+                                        <div class="flex items-center gap-3 min-w-0">
+                                            <div class="flex flex-col items-center justify-center bg-slate-900 border border-slate-700 rounded w-12 h-12 shrink-0">
+                                                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Init</span>
+                                                <span class="text-lg font-bold text-amber-400 leading-tight">{char.initScore || '-'}</span>
+                                            </div>
+                                            <div class="min-w-0">
+                                                <h3 class="text-lg font-bold flex flex-wrap items-center gap-1.5 truncate">
+                                                    {char.name}
+                                                    {!char.isActive && <span class="text-[10px] bg-slate-700 text-slate-400 px-1.5 py-0.5 rounded font-normal">Inactive</span>}
+                                                    {char.isActive && isDown && (
+                                                        char.isEnemy ? (
+                                                            <span class="text-[10px] bg-rose-700 text-rose-100 px-1.5 py-0.5 rounded font-normal uppercase tracking-wider font-bold">Dead</span>
+                                                        ) : (
+                                                            <span class="text-[10px] bg-amber-700 text-amber-100 px-1.5 py-0.5 rounded font-normal animate-pulse">Unconscious</span>
+                                                        )
+                                                    )}
+                                                </h3>
+                                                <p class="text-xs text-slate-400">Mod: {char.initMod >= 0 ? `+${char.initMod}` : char.initMod}</p>
+                                                
+                                                {/* Dynamic Condition Badge Assembly */}
+                                                {char.conditions.length > 0 && (
+                                                    <div class="flex flex-wrap gap-1 mt-1">
+                                                        {char.conditions.map(cond => {
+                                                            const isBuff = BUFF_CONDITIONS.includes(cond);
+                                                            const badgeColorClasses = isBuff 
+                                                                ? "bg-emerald-950 border-emerald-800 text-emerald-300"
+                                                                : "bg-amber-950 border-amber-800 text-amber-300";
+
+                                                            return (
+                                                                <span key={cond} class={`inline-flex items-center gap-1 border text-[10px] font-medium px-2 py-0.5 rounded-full ${badgeColorClasses}`}>
+                                                                    {cond}
+                                                                    <button onClick={() => removeCondition(char.id, cond)} class="hover:text-rose-400 font-bold ml-0.5 cursor-pointer">×</button>
+                                                                </span>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+
+                                        {/* Center: Strict Single-Line Stats (AC, HP, Temp HP) */}
+                                        <div class="flex items-center gap-3 bg-slate-900/60 p-2 rounded-md border border-slate-800 shrink-0 flex-nowrap whitespace-nowrap">
+                                            <div class="flex flex-col items-center justify-center px-2 border-r border-slate-800">
+                                                <span class="text-[9px] uppercase font-bold text-slate-400 tracking-wider leading-none">AC</span>
+                                                <span class="text-base font-black text-amber-400 mt-0.5 leading-none">{char.ac}</span>
+                                            </div>
+                                            <div class="flex items-center gap-1.5">
+                                                <label class="text-[11px] uppercase font-bold text-slate-400">HP:</label>
+                                                <input type="text" value={char.currentHp} onChange={(e) => updateCharacterField(char.id, 'currentHp', e.target.value)} class="w-14 bg-slate-800 text-center border border-slate-700 rounded py-0.5 text-sm font-semibold text-rose-400 focus:outline-none focus:border-rose-500"/>
+                                                <span class="text-slate-600 text-xs">/</span>
+                                                <span class="text-slate-300 text-sm font-semibold">{char.maxHp}</span>
+                                            </div>
+                                            <div class="flex items-center gap-1.5 border-l border-slate-800 pl-2">
+                                                <label class="text-[11px] uppercase font-bold text-slate-400">Temp:</label>
+                                                <input type="text" value={char.tempHp} onChange={(e) => updateCharacterField(char.id, 'tempHp', e.target.value)} class="w-14 bg-slate-800 text-center border border-slate-700 rounded py-0.5 text-sm font-semibold text-cyan-400 focus:outline-none focus:border-cyan-500"/>
+                                            </div>
+                                        </div>
+
+                                        {/* Right Side: Slimmed-down Compact Buttons & Condition Menu */}
+                                        <div class="flex flex-wrap gap-1.5 items-center justify-end shrink-0">
+                                            <select 
+                                                onChange={(e) => { addCondition(char.id, e.target.value); e.target.value = ""; }}
+                                                class="h-7 bg-slate-900 border border-slate-700 rounded text-[11px] px-1.5 text-slate-300 focus:outline-none focus:border-amber-500 cursor-pointer"
+                                            >
+                                                <option value="">+ Condition / Buff</option>
+                                                {ALL_CONDITIONS.map(c => (
+                                                    <option key={c} value={c} disabled={char.conditions.includes(c)}>
+                                                        {BUFF_CONDITIONS.includes(c) ? `✨ ${c}` : c}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            
+                                            <button onClick={() => rollSingleInitiative(char.id)} disabled={!char.isActive} class="h-7 bg-slate-700 hover:bg-slate-600 disabled:opacity-40 text-[11px] font-medium px-2 rounded transition cursor-pointer">
+                                                🎲 Roll
+                                            </button>
+                                            <button onClick={() => toggleEnemy(char.id)} class={`h-7 text-[11px] font-medium px-2 rounded transition cursor-pointer ${char.isEnemy ? 'bg-rose-900 text-rose-200 hover:bg-rose-800' : 'bg-slate-700 text-slate-200 hover:bg-slate-600'}`}>
+                                                {char.isEnemy ? '😈 Enemy' : '😇 Ally'}
+                                            </button>
+                                            <button onClick={() => toggleActive(char.id)} class="h-7 bg-slate-700 hover:bg-slate-600 text-[11px] font-medium px-2 rounded transition cursor-pointer">
+                                                {char.isActive ? '💤 Bench' : '⚔️ Deploy'}
+                                            </button>
+                                            
+                                            {/* Clone and Drop explicitly bound to Enemy status */}
+                                            {char.isEnemy && (
+                                                React.createElement(React.Fragment, null, 
+                                                    <button onClick={() => duplicateCharacter(char.id)} class="h-7 bg-slate-700 hover:bg-slate-600 text-[11px] font-medium px-2 rounded transition cursor-pointer">
+                                                        👥 Clone
+                                                    </button>,
+                                                    <button onClick={() => removeCharacter(char.id)} class="h-7 bg-rose-950 text-rose-300 hover:bg-rose-900 text-[11px] font-medium px-2 rounded transition cursor-pointer">
+                                                        ❌ Drop
+                                                    </button>
+                                                )
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Conditional Render: Death Saving Throws Interface (Only for active, down Allies) */}
+                                    {char.isActive && isDown && !char.isEnemy && (
+                                        <div class="mt-3 pt-3 border-t border-slate-700/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/40 p-2.5 rounded-md">
+                                            <div class="flex flex-wrap gap-5 items-center">
+                                                <span class="text-xs font-bold tracking-wider text-rose-400 uppercase">Death Saves:</span>
+                                                
+                                                {/* Success Trackers */}
+                                                <div class="flex items-center gap-1.5">
+                                                    <span class="text-[10px] text-slate-400 font-semibold uppercase mr-1">Successes</span>
+                                                    {[1, 2, 3].map((idx) => (
+                                                        <div key={idx} onClick={() => handleDeathSaveToggle(char.id, 'successes', idx)} class={`w-4 h-4 rounded-full border-2 cursor-pointer transition ${char.deathSaves.successes >= idx ? 'bg-emerald-500 border-emerald-400' : 'border-slate-600 hover:border-emerald-500'}`}></div>
+                                                    ))}
+                                                </div>
+
+                                                {/* Failure Trackers */}
+                                                <div class="flex items-center gap-1.5">
+                                                    <span class="text-[10px] text-slate-400 font-semibold uppercase mr-1">Failures</span>
+                                                    {[1, 2, 3].map((idx) => (
+                                                        <div key={idx} onClick={() => handleDeathSaveToggle(char.id, 'failures', idx)} class={`w-4 h-4 rounded-full border-2 cursor-pointer transition ${char.deathSaves.failures >= idx ? 'bg-rose-600 border-rose-500' : 'border-slate-600 hover:border-rose-500'}`}></div>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            <button onClick={() => stabilizeCharacter(char.id)} class="bg-emerald-700 hover:bg-emerald-600 text-white text-[11px] font-bold py-1 px-3 rounded shadow transition cursor-pointer self-start sm:self-auto">
+                                                🛡️ Mark Stabilized
+                                            </button>
+                                        </div>
+                                    )}
+
+                                </div>
+                            );
+                        })}
+                        {characters.length === 0 && (
+                            <p class="text-center text-slate-500 py-8">No combatants inside the initiative pipeline. Add characters above!</p>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
