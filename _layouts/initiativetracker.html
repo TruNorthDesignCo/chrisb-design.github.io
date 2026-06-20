@@ -124,106 +124,107 @@
 
         // Sample initial datasets
         let characters = [
-   {
-    "id": "3",
-    "name": "Ira",
-    "currentHp": "36",
-    "maxHp": 36,
-    "tempHp": "0",
-    "ac": 14,
-    "initMod": 4,
-    "initScore": 0,
-    "isActive": true,
-    "isEnemy": false,
-    "deathSaves": {"successes": 0, "failures": 0},
-    "conditions": []
-  },
-  {
-    "id": "2",
-    "name": "Elyndor",
-    "currentHp": "22",
-    "maxHp": 22,
-    "tempHp": "0",
-    "ac": 10,
-    "initMod": 0,
-    "initScore": 0,
-    "isActive": true,
-    "isEnemy": false,
-    "deathSaves": {"successes": 0, "failures": 0},
-    "conditions": []
-  },
-  {
-    "id": "1",
-    "name": "Theodren",
-    "currentHp": "39",
-    "maxHp": 39,
-    "tempHp": "0",
-    "ac": 14,
-    "initMod": 2,
-    "initScore": 0,
-    "isActive": true,
-    "isEnemy": false,
-    "deathSaves": {"successes": 0, "failures": 0},
-    "conditions": []
-  },
-  {
-    "id": "4",
-    "name": "Thragor",
-    "currentHp": "50",
-    "maxHp": 50,
-    "tempHp": "0",
-    "ac": 15,
-    "initMod": 2,
-    "initScore": 0,
-    "isActive": false,
-    "isEnemy": false,
-    "deathSaves": {"successes": 0, "failures": 0},
-    "conditions": []
-  },
-  {
-    "id": "5",
-    "name": "Baelon",
-    "currentHp": "49",
-    "maxHp": 49,
-    "tempHp": "0",
-    "ac": 16,
-    "initMod": 3,
-    "initScore": 0,
-    "isActive": false,
-    "isEnemy": false,
-    "deathSaves": {"successes": 0, "failures": 0},
-    "conditions": []
-  },
-  {
-    "id": "6",
-    "name": "Kled",
-    "currentHp": "49",
-    "maxHp": 49,
-    "tempHp": "0",
-    "ac": 19,
-    "initMod": 3,
-    "initScore": 0,
-    "isActive": false,
-    "isEnemy": false,
-    "deathSaves": {"successes": 0, "failures": 0},
-    "conditions": []
-  },
-  {
-    "id": "7",
-    "name": "Tisara",
-    "currentHp": "38",
-    "maxHp": 38,
-    "tempHp": "0",
-    "ac": 18,
-    "initMod": 0,
-    "initScore": 0,
-    "isActive": false,
-    "isEnemy": false,
-    "deathSaves": {"successes": 0, "failures": 0},
-    "conditions": []
-  }
-];
-  
+           {
+            "id": "3",
+            "name": "Ira",
+            "currentHp": "36",
+            "maxHp": 36,
+            "tempHp": "0",
+            "ac": 14,
+            "initMod": 4,
+            "initScore": 0,
+            "isActive": true,
+            "isEnemy": false,
+            "deathSaves": {"successes": 0, "failures": 0},
+            "conditions": []
+          },
+          {
+            "id": "2",
+            "name": "Elyndor",
+            "currentHp": "22",
+            "maxHp": 22,
+            "tempHp": "0",
+            "ac": 10,
+            "initMod": 0,
+            "initScore": 0,
+            "isActive": true,
+            "isEnemy": false,
+            "deathSaves": {"successes": 0, "failures": 0},
+            "conditions": []
+          },
+          {
+            "id": "1",
+            "name": "Theodren",
+            "currentHp": "39",
+            "maxHp": 39,
+            "tempHp": "0",
+            "ac": 14,
+            "initMod": 2,
+            "initScore": 0,
+            "isActive": true,
+            "isEnemy": false,
+            "deathSaves": {"successes": 0, "failures": 0},
+            "conditions": []
+          },
+          {
+            "id": "4",
+            "name": "Thragor",
+            "currentHp": "50",
+            "maxHp": 50,
+            "tempHp": "0",
+            "ac": 15,
+            "initMod": 2,
+            "initScore": 0,
+            "isActive": false,
+            "isEnemy": false,
+            "deathSaves": {"successes": 0, "failures": 0},
+            "conditions": []
+          },
+          {
+            "id": "5",
+            "name": "Baelon",
+            "currentHp": "49",
+            "maxHp": 49,
+            "tempHp": "0",
+            "ac": 16,
+            "initMod": 3,
+            "initScore": 0,
+            "isActive": false,
+            "isEnemy": false,
+            "deathSaves": {"successes": 0, "failures": 0},
+            "conditions": []
+          },
+          {
+            "id": "6",
+            "name": "Kled",
+            "currentHp": "49",
+            "maxHp": 49,
+            "tempHp": "0",
+            "ac": 19,
+            "initMod": 3,
+            "initScore": 0,
+            "isActive": false,
+            "isEnemy": false,
+            "deathSaves": {"successes": 0, "failures": 0},
+            "conditions": []
+          },
+          {
+            "id": "7",
+            "name": "Tisara",
+            "currentHp": "38",
+            "maxHp": 38,
+            "tempHp": "0",
+            "ac": 18,
+            "initMod": 0,
+            "initScore": 0,
+            "isActive": false,
+            "isEnemy": false,
+            "deathSaves": {"successes": 0, "failures": 0},
+            "conditions": []
+          }
+        ];
+
+
         // Custom notification system instead of browser alerts
         function showFeedback(message, type = 'success') {
             const banner = document.getElementById('feedback-banner');
@@ -251,7 +252,7 @@
         function rollSingleInitiative(id) {
             const char = characters.find(c => c.id === id);
             if (char) {
-                char.initScore = rollD20() + char.initMod;
+                char.initScore = rollD20() + (parseInt(char.initMod) || 0);
                 renderCharacters();
             }
         }
@@ -259,18 +260,49 @@
         function rollAllInitiatives() {
             characters.forEach(char => {
                 if (char.isActive) {
-                    char.initScore = rollD20() + char.initMod;
+                    char.initScore = rollD20() + (parseInt(char.initMod) || 0);
                 }
             });
+            // Auto-sort active characters immediately after rolling
+            characters.sort((a, b) => {
+                if (a.isActive && !b.isActive) return -1;
+                if (!a.isActive && b.isActive) return 1;
+                if (a.isActive && b.isActive) {
+                    const scoreA = parseInt(a.initScore) || 0;
+                    const scoreB = parseInt(b.initScore) || 0;
+                    if (scoreB !== scoreA) return scoreB - scoreA;
+                    
+                    // Tie breaker 1: Initiative Modifier
+                    const modA = parseInt(a.initMod) || 0;
+                    const modB = parseInt(b.initMod) || 0;
+                    if (modB !== modA) return modB - modA;
+                    
+                    // Tie breaker 2: Randomizer
+                    return Math.random() - 0.5;
+                }
+                return 0;
+            });
             renderCharacters();
-            showFeedback("Successfully rolled initiative for all active combatants!");
+            showFeedback("Rolled and sorted initiative for all active combatants!");
         }
 
         function sortInitiative() {
             characters.sort((a, b) => {
                 if (a.isActive && !b.isActive) return -1;
                 if (!a.isActive && b.isActive) return 1;
-                if (a.isActive && b.isActive) return b.initScore - a.initScore;
+                if (a.isActive && b.isActive) {
+                    const scoreA = parseInt(a.initScore) || 0;
+                    const scoreB = parseInt(b.initScore) || 0;
+                    if (scoreB !== scoreA) return scoreB - scoreA;
+                    
+                    // Tie breaker 1: Initiative Modifier
+                    const modA = parseInt(a.initMod) || 0;
+                    const modB = parseInt(b.initMod) || 0;
+                    if (modB !== modA) return modB - modA;
+                    
+                    // Tie breaker 2: Randomizer
+                    return Math.random() - 0.5;
+                }
                 return 0;
             });
             renderCharacters();
@@ -541,7 +573,8 @@
                             <div class="flex items-center gap-3 min-w-0">
                                 <div class="flex flex-col items-center justify-center bg-slate-900 border border-slate-700 rounded w-12 h-12 shrink-0">
                                     <span class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Init</span>
-                                    <span class="text-lg font-bold text-amber-400 leading-none mt-0.5">${char.initScore || '-'}</span>
+                                    <input type="text" data-field="initScore" data-id="${char.id}" value="${char.initScore === 0 ? '' : char.initScore}" placeholder="-" 
+                                           class="w-10 bg-transparent text-center text-lg font-bold text-amber-400 leading-none mt-0.5 focus:outline-none focus:bg-slate-800 rounded transition"/>
                                 </div>
                                 <div class="min-w-0">
                                     <h3 class="text-lg font-bold flex flex-wrap items-center gap-1.5 truncate">
@@ -553,7 +586,9 @@
                                                 : `<span class="text-[10px] bg-amber-700 text-amber-100 px-1.5 py-0.5 rounded font-normal animate-pulse select-none">Unconscious</span>`
                                         ) : ''}
                                     </h3>
-                                    <p class="text-xs text-slate-400">Mod: ${char.initMod >= 0 ? '+' : ''}${char.initMod}</p>
+                                    <div class="text-xs text-slate-400 flex items-center gap-1">
+                                        Mod: <input type="text" data-field="initMod" data-id="${char.id}" value="${char.initMod > 0 && !String(char.initMod).startsWith('+') ? '+' + char.initMod : char.initMod}" class="w-8 bg-transparent text-center border border-transparent hover:border-slate-700 focus:outline-none focus:bg-slate-800 focus:border-amber-500 rounded transition"/>
+                                    </div>
                                     ${conditionsMarkup}
                                 </div>
                             </div>
@@ -562,7 +597,8 @@
                             <div class="flex items-center gap-3 bg-slate-900/60 p-2 rounded-md border border-slate-800 shrink-0 flex-nowrap whitespace-nowrap">
                                 <div class="flex flex-col items-center justify-center px-2 border-r border-slate-800">
                                     <span class="text-[9px] uppercase font-bold text-slate-400 tracking-wider leading-none">AC</span>
-                                    <span class="text-base font-black text-amber-400 mt-1 leading-none">${char.ac}</span>
+                                    <input type="text" data-field="ac" data-id="${char.id}" value="${char.ac}" 
+                                           class="w-8 bg-transparent text-center text-base font-black text-amber-400 mt-1 leading-none focus:outline-none focus:bg-slate-800 rounded transition"/>
                                 </div>
                                 <div class="flex items-center gap-1.5">
                                     <label class="text-[11px] uppercase font-bold text-slate-400">HP:</label>
@@ -762,4 +798,4 @@
         });
     </script>
 </body>
-</html>      
+</html>
